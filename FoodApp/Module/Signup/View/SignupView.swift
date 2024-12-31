@@ -56,23 +56,13 @@ struct SignupView: View {
                 .appHorizontalPadding(30)
 
                 Spacer()
-
+                
                 // Login Link
-                HStack {
-                    Text(AppStrings.loginLink)
-                        .font(.system(size: 14))
-                        .foregroundColor(Color(UIColor.appSecondaryFontColor))
-
-                    Button(action: {
-                        // Navigate to Login screen
-                    }) {
-                        NavigationLink(destination: LoginView()) {
-                            Text(AppStrings.login)
-                                .font(.system(size: 14))
-                                .foregroundColor(Color(UIColor.appOrangeColor))
-                        }
-                    }
-                }
+                DidntReceiveLinkView(
+                    message: AppStrings.loginLink,
+                    linkText: AppStrings.clickHere,
+                    destination: LoginView()
+                )
                 Spacer()
             }
             .padding(.vertical)

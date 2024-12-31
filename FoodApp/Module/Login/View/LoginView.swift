@@ -16,28 +16,28 @@ struct LoginView: View {
                 VStack(spacing: 35) {
                     Spacer()
                     
-                    // Title and Subtitle
+                    //MARK: - Title and Subtitle
                     VStack(spacing: 10) {
                         Text(AppStrings.login).appTitleStyle()
                         Text(AppStrings.loginDetails).appSubtitleStyle()
                     }
-
+                    
                     // Input fields for email and password
                     VStack(spacing: 28) {
                         CustomTextField(placeholder: AppStrings.email, text: $viewModel.email)
                         CustomTextField(placeholder: AppStrings.password, text: $viewModel.password, isSecure: true)
                     }
                     .appHorizontalPadding(34)
-
-                    // Error message display
+                    
+                    //MARK: - Error message display
                     if let errorMessage = viewModel.errorMessage {
                         Text(errorMessage)
                             .foregroundColor(.red)
                             .font(.subheadline)
                             .padding(.top, 10)
                     }
-
-                    // Login Button
+                    
+                    //MARK: - Login Button
                     CustomButton(title: AppStrings.login, backgroundColor: Color(UIColor.appOrangeColor)) {
                         viewModel.validateLogin {
                             // Handle successful login logic here
@@ -46,8 +46,8 @@ struct LoginView: View {
                         }
                     }
                     .appHorizontalPadding(34)
-
-                    // Forgot Password Button
+                    
+                    //MARK: - Forgot Password Button
                     Button(action: {
                         // Handle forgot password logic
                         print("Forgot password tapped")
@@ -60,15 +60,15 @@ struct LoginView: View {
                         }
                     }
                     .appTopPadding(10)
-
-                    // Social Media Login Options
+                    
+                    //MARK: - Social Media Login Options
                     VStack {
                         Text(AppStrings.loginWith)
                             .font(.footnote)
                             .font(.system(size: 14))
                             .foregroundColor(.gray)
                             .appTopPadding(30)
-
+                        
                         VStack(spacing: 28) {
                             SocialMediaButton(
                                 title: AppStrings.loginwithFacebook,
@@ -78,7 +78,7 @@ struct LoginView: View {
                                 // Handle Facebook login
                                 print("Login with Facebook tapped")
                             }
-
+                            
                             SocialMediaButton(
                                 title: AppStrings.loginwithgoogle,
                                 image: AppImages.google.rawValue,
@@ -91,24 +91,13 @@ struct LoginView: View {
                         .appHorizontalPadding(30)
                         .appTopPadding(25)
                     }
-
-                    // Sign Up Link
-                    HStack {
-                        Text(AppStrings.signupLink)
-                            .font(.footnote)
-                            .foregroundColor(.gray)
-
-                        Button(action: {
-                            // Handle sign-up navigation action
-                        }) {
-                            NavigationLink(destination: SignupView()) {
-                                Text(AppStrings.signUp)
-                                    .font(.footnote)
-                                    .foregroundColor(.orange)
-                            }
-                        }
-                    }
-                    .padding(.bottom, 26)
+                    
+                    //MARK: - Sign Up Link
+                    DidntReceiveLinkView(
+                        message: AppStrings.signupLink,
+                        linkText: AppStrings.clickHere,
+                        destination: SignupView()
+                    )
                     Spacer()
                 }
                 .padding(.vertical)

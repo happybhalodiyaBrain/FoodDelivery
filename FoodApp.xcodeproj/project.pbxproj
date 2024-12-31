@@ -31,6 +31,8 @@
 		BDFFF0612D23EE2F00A2CF08 /* OtpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFFF0602D23EE2F00A2CF08 /* OtpView.swift */; };
 		BDFFF0672D24077B00A2CF08 /* NewPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFFF0662D24077B00A2CF08 /* NewPasswordView.swift */; };
 		BDFFF0692D240B8D00A2CF08 /* NewPassordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFFF0682D240B8D00A2CF08 /* NewPassordViewModel.swift */; };
+		BDFFF06B2D24157A00A2CF08 /* CustomNavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFFF06A2D24157A00A2CF08 /* CustomNavigationButton.swift */; };
+		BDFFF06D2D24175100A2CF08 /* DidntReceiveLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFFF06C2D24175100A2CF08 /* DidntReceiveLinkView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,8 @@
 		BDFFF0602D23EE2F00A2CF08 /* OtpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpView.swift; sourceTree = "<group>"; };
 		BDFFF0662D24077B00A2CF08 /* NewPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordView.swift; sourceTree = "<group>"; };
 		BDFFF0682D240B8D00A2CF08 /* NewPassordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPassordViewModel.swift; sourceTree = "<group>"; };
+		BDFFF06A2D24157A00A2CF08 /* CustomNavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationButton.swift; sourceTree = "<group>"; };
+		BDFFF06C2D24175100A2CF08 /* DidntReceiveLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DidntReceiveLinkView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +170,8 @@
 				BDFFF0452D23BF5E00A2CF08 /* CustomButton.swift */,
 				BDFFF0472D23BF9F00A2CF08 /* SocialMediaButton.swift */,
 				BDFFF0492D23C08400A2CF08 /* UI + Extention.swift */,
+				BDFFF06A2D24157A00A2CF08 /* CustomNavigationButton.swift */,
+				BDFFF06C2D24175100A2CF08 /* DidntReceiveLinkView.swift */,
 			);
 			path = Uitility;
 			sourceTree = "<group>";
@@ -417,12 +423,14 @@
 				BDFFF04C2D23CBC800A2CF08 /* SignupViewModel.swift in Sources */,
 				BD06329B2D23036200571AE1 /* SignupView.swift in Sources */,
 				BDFFF0612D23EE2F00A2CF08 /* OtpView.swift in Sources */,
+				BDFFF06D2D24175100A2CF08 /* DidntReceiveLinkView.swift in Sources */,
 				BDFFF0482D23BF9F00A2CF08 /* SocialMediaButton.swift in Sources */,
 				BD0632732D22C1EC00571AE1 /* ContentView.swift in Sources */,
 				BDFFF0692D240B8D00A2CF08 /* NewPassordViewModel.swift in Sources */,
 				BD0632712D22C1EC00571AE1 /* FoodAppApp.swift in Sources */,
 				BDFFF0462D23BF5F00A2CF08 /* CustomButton.swift in Sources */,
 				BD0632852D22CD1200571AE1 /* SplashViewModel.swift in Sources */,
+				BDFFF06B2D24157A00A2CF08 /* CustomNavigationButton.swift in Sources */,
 				BD0632972D22D58800571AE1 /* LoginView.swift in Sources */,
 				BDFFF0572D23E8D700A2CF08 /* ResetPassViewModel.swift in Sources */,
 				BDFFF0552D23E23C00A2CF08 /* ResetPassView.swift in Sources */,

@@ -2,24 +2,33 @@ import SwiftUI
 
 struct OtpView: View {
     
+    // MARK: - Properties
+    /// A state variable that holds the OTP input values.
     @State private var otp: [String] = Array(repeating: "", count: 4)
     
+    // MARK: - Body
     var body: some View {
-        NavigationView{
-            VStack(spacing: 35){
+        NavigationView {
+            VStack(spacing: 35) {
+                
+                // MARK: - Title and Subtitle Section
                 VStack(spacing: 10) {
-                    Text(AppStrings.otpTitle).appTitleStyle()
-                    Text(AppStrings.otpNote).appSubtitleStyle()
+                    Text(AppStrings.otpTitle)
+                        .appTitleStyle()
+                    Text(AppStrings.otpNote)
+                        .appSubtitleStyle()
                 }
                 .appHorizontalPadding(50)
                 
-                // OTP Input Fields
+                // MARK: - OTP Input Fields Section
                 HStack(spacing: 28) {
+                    
                     ForEach(0..<otp.count, id: \.self) { index in
                         TextField("*", text: Binding(
                             get: { otp[index] },
                             set: { newValue in
-                                otp[index] = String(newValue.prefix(1)) // Allow only 1 character
+                                // Ensure that only one character is entered per field
+                                otp[index] = String(newValue.prefix(1))
                             }
                         ))
                         .keyboardType(.numberPad)
@@ -29,36 +38,30 @@ struct OtpView: View {
                         .background(Color(.systemGray6))
                         .cornerRadius(8)
                     }
-                }.padding(.top, 34)
-                
-                NavigationLink(destination: NewPasswordView()) {
-                    Text(AppStrings.next)
-                        .frame(maxWidth: .infinity, minHeight: 56)
-                        .foregroundColor(Color(UIColor.appWhiteColor))
-                        .background(Color(UIColor.appOrangeColor))
-                        .cornerRadius(28)
                 }
-                .appHorizontalPadding(34)
+                .padding(.top, 34)
                 
-                HStack {
-                    Text(AppStrings.DidntReceive)
-                        .font(.system(size: 14, weight: .regular))
-                        .foregroundColor(.gray)
-
-                    Button(action: {
-                        // Handle sign-up navigation action
-                    }) {
-                        NavigationLink(destination: ResetPassView()) {
-                            Text(AppStrings.clickHere)
-                                .font(.system(size: 14, weight: .regular))
-                                .foregroundColor(.orange)
-                        }
-                    }
-                }
+                // MARK: - Next Button Section
+                CustomNavigationButton(
+                    title: AppStrings.next,
+                    backgroundColor: Color(UIColor.appOrangeColor),
+                    destination: NewPasswordView()
+                )
+                
+                // MARK: - "Didn't Receive OTP?" Link Section
+                DidntReceiveLinkView(
+                    message: AppStrings.DidntReceive,
+                    linkText: AppStrings.clickHere,
+                    destination: ResetPassView()
+                )
+                
+                // MARK: - Spacer Section
                 Spacer()
-                
             }
-      
+            .onTapGesture {
+                // Dismiss keyboard when tapped outside input fields
+                UIApplication.shared.endEditing()
+            }
         }
         .padding(.vertical)
         .navigationBarBackButtonHidden()
@@ -66,6 +69,7 @@ struct OtpView: View {
     }
 }
 
+// MARK: - Preview
 #Preview {
     OtpView()
 }
