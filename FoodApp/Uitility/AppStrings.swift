@@ -32,4 +32,6 @@ struct AppStrings {
     static let newPassword = "New Password"
     static let confiemPassword = "Confim Password"
     static let newPasswordNote = "Please enter your email to receive a link to  create a new password via email"
+    static let loginNote = "Discover the best foods from over 1,000 restaurants and fast delivery to your doorstep"
+    static let createAccount = "Create an Account"
 }

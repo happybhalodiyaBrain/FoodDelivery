@@ -45,7 +45,8 @@ struct OtpView: View {
                 CustomNavigationButton(
                     title: AppStrings.next,
                     backgroundColor: Color(UIColor.appOrangeColor),
-                    destination: NewPasswordView()
+                    destination: NewPasswordView(),
+                    foregroundColor:Color(UIColor.appWhiteColor)
                 )
                 
                 // MARK: - "Didn't Receive OTP?" Link Section

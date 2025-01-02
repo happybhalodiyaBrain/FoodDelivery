@@ -31,7 +31,8 @@ struct ResetPassView: View {
                 CustomNavigationButton(
                     title: AppStrings.send,
                     backgroundColor: Color(UIColor.appOrangeColor),
-                    destination: OtpView()
+                    destination: OtpView(),
+                    foregroundColor:Color(UIColor.appWhiteColor)
                 )
                 Spacer()
             }

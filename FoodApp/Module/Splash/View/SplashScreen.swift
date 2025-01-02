@@ -36,7 +36,7 @@ struct SplashScreen: View {
                 }
             }
         } else {
-            LoginView()
+            OnBoardingView()
         }
     }
 }

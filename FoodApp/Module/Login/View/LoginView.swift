@@ -11,7 +11,7 @@ struct LoginView: View {
     // MARK: - Body
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             ScrollView {
                 VStack(spacing: 35) {
                     Spacer()
