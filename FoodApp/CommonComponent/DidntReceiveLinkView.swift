@@ -12,12 +12,12 @@ struct DidntReceiveLinkView: View {
     var body: some View {
         HStack {
             Text(message)
-                .font(.system(size: 14, weight: .regular))
-                .foregroundColor(.gray)
+                .font(AppFont.FontStyle.interRegular.font(size: 14))
+                .foregroundColor(Color(UIColor.appSecondaryFontColor))
             
             Text(linkText)
-                .font(.system(size: 14, weight: .regular))
-                .foregroundColor(.orange)
+                .font(AppFont.FontStyle.interRegular.font(size: 14))
+                .foregroundColor(Color(UIColor.appOrangeColor))
                 .onTapGesture {
                     action()
                 }

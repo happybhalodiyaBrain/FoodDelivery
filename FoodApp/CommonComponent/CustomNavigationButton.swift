@@ -12,6 +12,7 @@ struct CustomNavigationButton: View {
             action()
         }) {
             Text(title)
+                .font(AppFont.FontStyle.interRegular.font(size: 16))
                 .frame(maxWidth: .infinity, minHeight: 56)
                 .foregroundColor(foregroundColor)
                 .background(backgroundColor)

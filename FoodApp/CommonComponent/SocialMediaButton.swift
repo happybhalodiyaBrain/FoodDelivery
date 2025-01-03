@@ -12,18 +12,19 @@ struct SocialMediaButton: View {
 
     // MARK: - Body
     var body: some View {
-        Button(action: action) {
-            HStack {
-                Image(image)
-                    .foregroundColor(Color(UIColor.appWhiteColor))
-                Text(title)
-                    .padding(.leading, 26)
-                    .foregroundColor(.white)
+            Button(action: action) {
+                HStack {
+                    Image(image)
+                        .foregroundColor(Color(UIColor.appWhiteColor))
+                    Text(title)
+                        .padding(.leading, 26)
+                        .font(AppFont.FontStyle.interRegular.font(size: 12))
+                        .foregroundColor(Color(UIColor.appWhiteColor))
+                }
+                .frame(maxWidth: .infinity, minHeight: 56, maxHeight: 56) // Fixed height
+                .padding(.horizontal)
+                .background(backgroundColor)
+                .cornerRadius(28)
             }
-            .frame(maxWidth: .infinity)
-            .padding()
-            .background(backgroundColor)
-            .cornerRadius(28)
         }
     }
-}

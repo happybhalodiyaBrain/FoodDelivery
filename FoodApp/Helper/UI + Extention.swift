@@ -7,14 +7,14 @@ extension Text {
     
     /// - This style uses a large title font, regular font weight, and the dark gray color for text.
     func appTitleStyle() -> some View {
-        self.font(.largeTitle)
+        self.font(AppFont.FontStyle.interRegular.font(size: 30))
             .fontWeight(.regular)
             .foregroundColor(Color(UIColor.appDarkGeryColor))
             .multilineTextAlignment(.center)
     }
     /// - This style uses a subheadline font and the secondary font color for text.
     func appSubtitleStyle() -> some View {
-        self.font(.subheadline)
+        self.font(AppFont.FontStyle.interRegular.font(size: 14))
             .foregroundColor(Color(UIColor.appSecondaryFontColor))
             .multilineTextAlignment(.center)
     }

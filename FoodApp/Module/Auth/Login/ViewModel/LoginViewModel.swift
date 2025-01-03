@@ -23,7 +23,7 @@ class LoginViewModel: ObservableObject {
     func validateLogin(completion: @escaping () -> Void) {
         // Check if the email is valid
         if !isValidEmail(email) {
-            errorMessage = "Please enter a valid email"
+            errorMessage = "Enter Your Email Address"
         // Check if the password is at least 6 characters
         } else if password.isEmpty || password.count < 6 {
             errorMessage = "Password should be at least 6 characters"

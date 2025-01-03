@@ -39,19 +39,17 @@ struct LoginMainView: View {
                         Text(AppStrings.foodDelivery)
                             .foregroundColor(Color(UIColor.appSecondaryFontColor))
                             .font(AppFont.FontStyle.interRegular.font(size: 10))
-                        
+                            .tracking(2)
                         
                         Text(AppStrings.loginNote)
-                            .font(.subheadline)
+                            .font(AppFont.FontStyle.interRegular.font(size: 13))
                             .foregroundColor(Color(UIColor.appSecondaryFontColor))
                             .multilineTextAlignment(.center)
-                            .padding(.horizontal, 50)
-                            .padding(.top, 25)
+                            .padding(.horizontal, 52)
+                            .padding(.top, 33)
                     }
                     .padding(.top, -20)
-                    
-                    Spacer()
-                    
+                                    
                     // Buttons
                     VStack(spacing: 20) {
                         CustomNavigationButton(
@@ -68,15 +66,11 @@ struct LoginMainView: View {
                             action: { viewModel.NavigateToSignupView()}
                         )
                     }
-                    .padding(.top, 20)
+                    .padding(.top, 37)
                     .padding(.vertical)
-                    
                 }
-                
-                
             }
             .ignoresSafeArea()
-            
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
         }

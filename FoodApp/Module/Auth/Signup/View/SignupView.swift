@@ -12,13 +12,12 @@ struct SignupView: View {
     
     var body: some View {
         ScrollView {
-            VStack(spacing: 10) {
+            VStack(spacing: 13) {
                 
                 // Title and Subtitle
                 Text(AppStrings.signUp).appTitleStyle()
-                Text(AppStrings.loginDetails).appSubtitleStyle()
+                Text(AppStrings.signupSubtitle).appSubtitleStyle()
 
-                Spacer()
 
                 // Input fields
                 VStack(spacing: 28) {
@@ -28,8 +27,7 @@ struct SignupView: View {
                     CustomTextField(placeholder: AppStrings.address, text: $viewModel.address)
                     CustomTextField(placeholder: AppStrings.password, text: $viewModel.password)
                     CustomTextField(placeholder: AppStrings.confirmPassword, text: $viewModel.confirmPassword)
-                }
-                .padding(.horizontal, 30)
+                }  
                 .padding(.top, 35)
 
                 // Error message display
@@ -40,10 +38,9 @@ struct SignupView: View {
                         .padding(.top, 10)
                 }
 
-                Spacer()
+               
 
                 // Sign Up Button
-                VStack(spacing: 30) {
                     CustomButton(title: AppStrings.signUp, backgroundColor: Color(UIColor.appOrangeColor)) {
                         // Validate inputs
                         viewModel.validateInputs {
@@ -52,8 +49,9 @@ struct SignupView: View {
                             // Add additional sign-up logic here (e.g., API call)
                         }
                     }
-                }
+                
                 .appHorizontalPadding(30)
+                .appTopPadding(28)
 
                 Spacer()
                 
@@ -63,7 +61,7 @@ struct SignupView: View {
                     linkText: AppStrings.clickHere,
                     action: { viewModel.onNavigateToLogin()}
                 )
-                Spacer()
+            
             }
             .padding(.vertical)
             .navigationBarBackButtonHidden(true)

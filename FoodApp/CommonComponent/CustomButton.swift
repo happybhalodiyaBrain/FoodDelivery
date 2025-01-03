@@ -13,7 +13,8 @@ struct CustomButton: View {
         Button(action: action) {
             Text(title)
                 .frame(maxWidth: .infinity, minHeight: 56)
-                .foregroundColor(.white)
+                .font(AppFont.FontStyle.interRegular.font(size: 16))
+                .foregroundColor(Color(UIColor.appWhiteColor))
                 .background(backgroundColor)
                 .cornerRadius(28)
         }
