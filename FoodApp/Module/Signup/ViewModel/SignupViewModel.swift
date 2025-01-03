@@ -68,4 +68,7 @@ class SignupViewModel: ObservableObject {
         let test = NSPredicate(format:"SELF MATCHES %@", regex)
         return test.evaluate(with: email)
     }
+    func onNavigateToLogin() {
+        NavigationService.shared.pop()
+    }
 }

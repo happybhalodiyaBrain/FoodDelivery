@@ -8,5 +8,9 @@ class NewPassordViewModel: ObservableObject {
     
     /// The confirm password entered by the user.
     @Published var confirmPassowrd: String = ""
+    
+    func NavigateToNewPasswordView () {
+        NavigationService.shared.popToRoot(push: .auth(.login))
+    }
 }
 

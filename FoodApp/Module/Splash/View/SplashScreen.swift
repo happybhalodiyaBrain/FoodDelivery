@@ -4,7 +4,6 @@ struct SplashScreen: View {
     @StateObject private var viewModel = SplashViewModel()
     
     var body: some View {
-        if viewModel.isSplashActive {
             ZStack {
                 // Background pattern
                 Image(AppImages.splashBG.rawValue)
@@ -35,9 +34,6 @@ struct SplashScreen: View {
                         .foregroundColor(Color(UIColor.appSecondaryFontColor))
                 }
             }
-        } else {
-            OnBoardingView()
-        }
     }
 }
 

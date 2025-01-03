@@ -7,7 +7,7 @@ struct NewPasswordView: View {
     
     // MARK: - Body
     var body: some View {
-        NavigationStack{
+      
             // MARK: - Title and Subtitle Section
             VStack(spacing: 35) {
                 VStack(spacing: 10) {
@@ -31,7 +31,8 @@ struct NewPasswordView: View {
                 CustomNavigationButton(
                     title: AppStrings.next,
                     backgroundColor: Color(UIColor.appOrangeColor),
-                    destination: NewPasswordView(), foregroundColor:Color(UIColor.appWhiteColor)
+                    foregroundColor:Color(UIColor.appWhiteColor),
+                    action: { viewModel.NavigateToNewPasswordView()}
                 )
                 // MARK: - Spacer Section
                 Spacer()
@@ -43,7 +44,7 @@ struct NewPasswordView: View {
             .navigationBarBackButtonHidden()
         }
     }
-}
+
 
 // MARK: - Preview
 #Preview {

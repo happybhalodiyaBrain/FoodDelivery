@@ -9,7 +9,7 @@ struct ResetPassView: View {
     
     // MARK: - Body
     var body: some View {
-        NavigationView {
+  
             VStack(spacing: 35) {
                 
                 // MARK: Title and Subtitle
@@ -31,8 +31,8 @@ struct ResetPassView: View {
                 CustomNavigationButton(
                     title: AppStrings.send,
                     backgroundColor: Color(UIColor.appOrangeColor),
-                    destination: OtpView(),
-                    foregroundColor:Color(UIColor.appWhiteColor)
+                    foregroundColor:Color(UIColor.appWhiteColor),
+                    action: { viewModel.NavigateToOtpView()}
                 )
                 Spacer()
             }
@@ -41,12 +41,13 @@ struct ResetPassView: View {
                 // Dismiss keyboard when tapped outside input fields
                 UIApplication.shared.endEditing()
             }
+            .navigationBarHidden(true)
+            .navigationBarBackButtonHidden()
         }
-        .navigationBarHidden(true)
-        .navigationBarBackButtonHidden()
+       
     }
     
-}
+
 
 // MARK: - Preview
 #Preview {

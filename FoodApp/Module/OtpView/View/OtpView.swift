@@ -5,10 +5,11 @@ struct OtpView: View {
     // MARK: - Properties
     /// A state variable that holds the OTP input values.
     @State private var otp: [String] = Array(repeating: "", count: 4)
-    
+    @StateObject private var viewModel = OTPViewModel()
+
     // MARK: - Body
     var body: some View {
-        NavigationView {
+    
             VStack(spacing: 35) {
                 
                 // MARK: - Title and Subtitle Section
@@ -45,15 +46,17 @@ struct OtpView: View {
                 CustomNavigationButton(
                     title: AppStrings.next,
                     backgroundColor: Color(UIColor.appOrangeColor),
-                    destination: NewPasswordView(),
-                    foregroundColor:Color(UIColor.appWhiteColor)
+                    foregroundColor:Color(UIColor.appWhiteColor),
+                    action: {viewModel.NavigateToNewPasswordView()}
                 )
                 
                 // MARK: - "Didn't Receive OTP?" Link Section
                 DidntReceiveLinkView(
                     message: AppStrings.DidntReceive,
                     linkText: AppStrings.clickHere,
-                    destination: ResetPassView()
+                    action:{
+                        viewModel.NavigateToResetPasswordView()
+                    }
                 )
                 
                 // MARK: - Spacer Section
@@ -63,12 +66,13 @@ struct OtpView: View {
                 // Dismiss keyboard when tapped outside input fields
                 UIApplication.shared.endEditing()
             }
+            .padding(.vertical)
+            .navigationBarBackButtonHidden()
+            .navigationBarHidden(true)
         }
-        .padding(.vertical)
-        .navigationBarBackButtonHidden()
-        .navigationBarHidden(true)
+        
     }
-}
+
 
 // MARK: - Preview
 #Preview {

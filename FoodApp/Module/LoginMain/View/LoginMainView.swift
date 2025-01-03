@@ -1,8 +1,11 @@
 import SwiftUI
 
 struct LoginMainView: View {
+   
+    @StateObject private var viewModel = LoginMainViewModel()
+    
     var body: some View {
-        NavigationView{
+       
             ScrollView{
                 VStack {
                     // Top Orange Section with Background
@@ -54,17 +57,16 @@ struct LoginMainView: View {
                     VStack(spacing: 20) {
                         CustomNavigationButton(
                             title: AppStrings.login,
-                            
                             backgroundColor: Color(UIColor.appOrangeColor),
-                            destination: LoginView(),
-                            foregroundColor:Color(UIColor.appWhiteColor)
+                            foregroundColor:Color(UIColor.appWhiteColor),
+                            action: { viewModel.NavigateToLoginView()}
                         )
                         
                         CustomNavigationButton(
                             title: AppStrings.createAccount,
                             backgroundColor: Color(UIColor.appWhiteColor),
-                            destination: SignupView(),
-                            foregroundColor:Color(UIColor.appOrangeColor)
+                            foregroundColor:Color(UIColor.appOrangeColor),
+                            action: { viewModel.NavigateToSignupView()}
                         )
                     }
                     .padding(.top, 20)
@@ -75,7 +77,7 @@ struct LoginMainView: View {
                 
             }
             .ignoresSafeArea()
-        }
+        
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
     }

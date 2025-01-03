@@ -8,5 +8,7 @@ class ResetPassViewModel: ObservableObject {
     
     /// The email entered by the user.
     @Published var email: String = ""
-   
+    func NavigateToOtpView() {
+        NavigationService.shared.push(to: .auth(.verifyOTP))
+    }
 }

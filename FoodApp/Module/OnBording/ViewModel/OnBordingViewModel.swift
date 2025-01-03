@@ -17,4 +17,8 @@ class OnboardingViewModel: ObservableObject {
     func isLastStep() -> Bool {
         return currentStepIndex == steps.count - 1
     }
+    
+    func NavigationToLoginMainView () {
+        NavigationService.shared.push(to: .auth(.loginMain))
+    }
 }

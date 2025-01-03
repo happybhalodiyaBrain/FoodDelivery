@@ -11,7 +11,7 @@ struct LoginView: View {
     // MARK: - Body
     
     var body: some View {
-        NavigationView {
+      
             ScrollView {
                 VStack(spacing: 35) {
                     Spacer()
@@ -96,7 +96,7 @@ struct LoginView: View {
                     DidntReceiveLinkView(
                         message: AppStrings.signupLink,
                         linkText: AppStrings.clickHere,
-                        destination: SignupView()
+                        action: {viewModel.NavigateToSignupPage() }                    
                     )
                     Spacer()
                 }
@@ -107,7 +107,7 @@ struct LoginView: View {
                     UIApplication.shared.endEditing()
                 }
             }
-        }
+        
     }
 }
 

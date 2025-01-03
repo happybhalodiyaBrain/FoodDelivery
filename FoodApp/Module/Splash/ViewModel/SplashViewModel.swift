@@ -8,7 +8,10 @@ class SplashViewModel: ObservableObject {
     init() {
         // Simulate some work, such as fetching data or a delay
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.isSplashActive = false
+            self.onbording()
         }
     }
+    func onbording() {
+            NavigationService.shared.push(to: .splash(. onBoarding))
+        }
 }

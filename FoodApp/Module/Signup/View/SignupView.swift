@@ -61,7 +61,7 @@ struct SignupView: View {
                 DidntReceiveLinkView(
                     message: AppStrings.loginLink,
                     linkText: AppStrings.clickHere,
-                    destination: LoginView()
+                    action: { viewModel.onNavigateToLogin()}
                 )
                 Spacer()
             }

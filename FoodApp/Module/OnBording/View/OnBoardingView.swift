@@ -1,10 +1,11 @@
 import SwiftUI
 
+
 struct OnBoardingView: View {
     @StateObject private var viewModel = OnboardingViewModel()
 
     var body: some View {
-        NavigationView{
+        GeometryReader { geometry in
             VStack {
                 // TabView for onboarding screens
                 TabView(selection: $viewModel.currentStepIndex) {
@@ -17,9 +18,9 @@ struct OnBoardingView: View {
                                 .frame(height: 300)
                             // Custom Page Indicator (Dots)
                             HStack(spacing: 8) {
-                                ForEach(viewModel.steps.indices, id: \.self) { index in
+                                ForEach(viewModel.steps.indices, id: \.self) { dotIndex in
                                     Circle()
-                                        .fill(index == viewModel.currentStepIndex ? Color.orange : Color.gray)
+                                        .fill(dotIndex == viewModel.currentStepIndex ? Color.orange : Color.gray)
                                         .frame(width: 10, height: 10)
                                 }
                             }
@@ -33,14 +34,18 @@ struct OnBoardingView: View {
                                 .multilineTextAlignment(.center)
                                 .padding(.horizontal, 40)
                                 .padding(.top, 15)
+                            
                             CustomNavigationButton(
                                 title: AppStrings.next,
-                                backgroundColor:Color(UIColor.appOrangeColor),
-                                destination:  LoginMainView(),
-                                foregroundColor:Color(UIColor.appWhiteColor)
-                            ).padding(.top, 41)
+                                backgroundColor: Color(UIColor.appOrangeColor),
+                                foregroundColor: Color(UIColor.appWhiteColor),
+                                action: {
+                                    viewModel.NavigationToLoginMainView()
+                                }
+                            )
+                            .padding(.top, 41)
                         }
-                        .tag(index)
+                        .tag(index) // Ensure the tag matches the type of `selection`
                     }
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
@@ -50,6 +55,7 @@ struct OnBoardingView: View {
         }
     }
 }
+
 
 #Preview {
     OnBoardingView()
