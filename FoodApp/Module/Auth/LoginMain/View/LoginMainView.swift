@@ -5,15 +5,13 @@ struct LoginMainView: View {
     @StateObject private var viewModel = LoginMainViewModel()
     
     var body: some View {
-       
-            ScrollView{
+        GeometryReader { geometry in
+            ScrollView(showsIndicators: false){
                 VStack {
-                    // Top Orange Section with Background
                     ZStack {
                         Image(AppImages.Organetopshape.rawValue)
                             .resizable()
                             .scaledToFit()
-                            .ignoresSafeArea()
                         
                         VStack {
                             Image(AppImages.monkeyFace.rawValue)
@@ -39,8 +37,9 @@ struct LoginMainView: View {
                         }
                         
                         Text(AppStrings.foodDelivery)
-                            .font(.footnote)
                             .foregroundColor(Color(UIColor.appSecondaryFontColor))
+                            .font(AppFont.FontStyle.interRegular.font(size: 10))
+                        
                         
                         Text(AppStrings.loginNote)
                             .font(.subheadline)
@@ -77,9 +76,10 @@ struct LoginMainView: View {
                 
             }
             .ignoresSafeArea()
-        
-        .navigationBarHidden(true)
-        .navigationBarBackButtonHidden(true)
+            
+            .navigationBarHidden(true)
+            .navigationBarBackButtonHidden(true)
+        }
     }
 }
 

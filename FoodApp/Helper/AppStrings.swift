@@ -2,6 +2,17 @@ import Foundation
 
 /// App Static Strings
 struct AppStrings {
+    
+    struct OnBording {
+        static let onbordingTitle1 = "Find Food You Love"
+        static let onbordingTitle2 = "Fast Delivery"
+        static let onbordingTitle3 = "Live Tracking"
+        
+        static let onbordingSubTitle1 = "Discover the best foods from over 1,000 restaurants and fast delivery to your doorstep."
+        static let onbordingSubTitle2 = "Fast food delivery to your home, office wherever you are."
+        static let onbordingSubTitle3 = "Real-time tracking of your food on the app once you placed the order."
+        
+    }
     static let login = "Login"
     static let loginDetails = "Add your details to login"
     static let email = "Your Email"

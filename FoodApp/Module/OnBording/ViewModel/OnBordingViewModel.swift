@@ -2,9 +2,17 @@ import SwiftUI
 
 class OnboardingViewModel: ObservableObject {
     @Published var steps: [OnboardingStep] = [
-        OnboardingStep(image: AppImages.onBording1.rawValue, title: "Find Food You Love", description: "Discover the best foods from over 1,000 restaurants and fast delivery to your doorstep."),
-        OnboardingStep(image: AppImages.onBording2.rawValue,  title: "Fast Delivery", description: "Fast food delivery to your home, office wherever you are."),
-        OnboardingStep(image: AppImages.onBording3.rawValue, title: "Live Tracking", description: "Real-time tracking of your food on the app once you placed the order.")
+        OnboardingStep(image: AppImages.onBording1.rawValue,
+                       title: AppStrings.OnBording.onbordingTitle1,
+                       description: AppStrings.OnBording.onbordingSubTitle1),
+        
+        OnboardingStep(image: AppImages.onBording2.rawValue,
+                       title: AppStrings.OnBording.onbordingTitle2,
+                       description: AppStrings.OnBording.onbordingSubTitle2),
+        
+        OnboardingStep(image: AppImages.onBording3.rawValue,
+                       title:AppStrings.OnBording.onbordingTitle3,
+                       description: AppStrings.OnBording.onbordingSubTitle3)
     ]
     @Published var currentStepIndex: Int = 0
 
