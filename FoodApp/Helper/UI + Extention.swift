@@ -8,7 +8,6 @@ extension Text {
     /// - This style uses a large title font, regular font weight, and the dark gray color for text.
     func appTitleStyle() -> some View {
         self.font(AppFont.FontStyle.interRegular.font(size: 30))
-            .fontWeight(.regular)
             .foregroundColor(Color(UIColor.appDarkGeryColor))
             .multilineTextAlignment(.center)
     }
@@ -17,6 +16,7 @@ extension Text {
         self.font(AppFont.FontStyle.interRegular.font(size: 14))
             .foregroundColor(Color(UIColor.appSecondaryFontColor))
             .multilineTextAlignment(.center)
+            .appHorizontalPadding(55)
     }
 }
 

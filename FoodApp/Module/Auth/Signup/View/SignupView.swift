@@ -17,8 +17,7 @@ struct SignupView: View {
                 // Title and Subtitle
                 Text(AppStrings.signUp).appTitleStyle()
                 Text(AppStrings.signupSubtitle).appSubtitleStyle()
-
-
+                
                 // Input fields
                 VStack(spacing: 28) {
                     CustomTextField(placeholder: AppStrings.name, text: $viewModel.name)
@@ -27,9 +26,9 @@ struct SignupView: View {
                     CustomTextField(placeholder: AppStrings.address, text: $viewModel.address)
                     CustomTextField(placeholder: AppStrings.password, text: $viewModel.password)
                     CustomTextField(placeholder: AppStrings.confirmPassword, text: $viewModel.confirmPassword)
-                }  
+                }
                 .padding(.top, 35)
-
+                
                 // Error message display
                 if let errorMessage = viewModel.errorMessage {
                     Text(errorMessage)
@@ -37,31 +36,30 @@ struct SignupView: View {
                         .font(.subheadline)
                         .padding(.top, 10)
                 }
-
-               
-
+                
+                
+                
                 // Sign Up Button
-                    CustomButton(title: AppStrings.signUp, backgroundColor: Color(UIColor.appOrangeColor)) {
-                        // Validate inputs
-                        viewModel.validateInputs {
-                            // If validation is successful, proceed with sign-up
-                            print("Sign up successful!")
-                            // Add additional sign-up logic here (e.g., API call)
-                        }
+                CustomButton(title: AppStrings.signUp, backgroundColor: Color(UIColor.appOrangeColor)) {
+                    // Validate inputs
+                    viewModel.validateInputs {
+                        // If validation is successful, proceed with sign-up
+                        print("Sign up successful!")
+                        // Add additional sign-up logic here (e.g., API call)
                     }
+                }
                 
                 .appHorizontalPadding(30)
                 .appTopPadding(28)
-
-                Spacer()
+                
                 
                 // Login Link
                 DidntReceiveLinkView(
                     message: AppStrings.loginLink,
                     linkText: AppStrings.clickHere,
                     action: { viewModel.onNavigateToLogin()}
-                )
-            
+                ).appTopPadding(25)
+                
             }
             .padding(.vertical)
             .navigationBarBackButtonHidden(true)

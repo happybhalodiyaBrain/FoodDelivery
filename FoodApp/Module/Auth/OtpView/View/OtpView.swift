@@ -10,20 +10,19 @@ struct OtpView: View {
     // MARK: - Body
     var body: some View {
     
-            VStack(spacing: 35) {
+            VStack {
                 
                 // MARK: - Title and Subtitle Section
-                VStack(spacing: 10) {
+                VStack(spacing: 13) {
                     Text(AppStrings.otpTitle)
                         .appTitleStyle()
                     Text(AppStrings.otpNote)
                         .appSubtitleStyle()
                 }
-                .appHorizontalPadding(50)
+              
                 
                 // MARK: - OTP Input Fields Section
                 HStack(spacing: 28) {
-                    
                     ForEach(0..<otp.count, id: \.self) { index in
                         TextField("*", text: Binding(
                             get: { otp[index] },
@@ -36,11 +35,11 @@ struct OtpView: View {
                         .multilineTextAlignment(.center)
                         .font(.system(size: 20, weight: .semibold))
                         .frame(width: 56, height: 56)
-                        .background(Color(.systemGray6))
+                        .background(Color(UIColor.appLightGrayColor))
                         .cornerRadius(8)
                     }
                 }
-                .padding(.top, 34)
+                .appTopPadding(53)
                 
                 // MARK: - Next Button Section
                 CustomNavigationButton(
@@ -48,7 +47,7 @@ struct OtpView: View {
                     backgroundColor: Color(UIColor.appOrangeColor),
                     foregroundColor:Color(UIColor.appWhiteColor),
                     action: {viewModel.NavigateToNewPasswordView()}
-                )
+                ).appTopPadding(36)
                 
                 // MARK: - "Didn't Receive OTP?" Link Section
                 DidntReceiveLinkView(
@@ -57,7 +56,7 @@ struct OtpView: View {
                     action:{
                         viewModel.NavigateToResetPasswordView()
                     }
-                )
+                ).appTopPadding(33)
                 
                 // MARK: - Spacer Section
                 Spacer()
@@ -66,7 +65,6 @@ struct OtpView: View {
                 // Dismiss keyboard when tapped outside input fields
                 UIApplication.shared.endEditing()
             }
-            .padding(.vertical)
             .navigationBarBackButtonHidden()
             .navigationBarHidden(true)
         }

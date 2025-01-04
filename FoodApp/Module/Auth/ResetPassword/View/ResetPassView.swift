@@ -9,44 +9,40 @@ struct ResetPassView: View {
     
     // MARK: - Body
     var body: some View {
-  
-            VStack(spacing: 35) {
-                
-                // MARK: Title and Subtitle
-                VStack(spacing: 10) {
-                    Text(AppStrings.resetPassword).appTitleStyle()
-                    Text(AppStrings.resetPassNote).appSubtitleStyle()
-                }
-                .appHorizontalPadding(50)
-                
-                // MARK: Email Input Field
-                VStack(spacing: 40) {
-                    CustomTextField(placeholder: AppStrings.email, text: $viewModel.email)
-                }
-                .appHorizontalPadding(34)
+        
+        VStack {
+            
+            // MARK: Title and Subtitle
+            VStack(spacing: 13) {
+                Text(AppStrings.resetPassword).appTitleStyle()
+                Text(AppStrings.resetPassNote).appSubtitleStyle()
+            }
+            
+            // MARK: Email Input Field
+            CustomTextField(placeholder: AppStrings.email, text: $viewModel.email)
                 .appTopPadding(40)
-                
-                // MARK: Send Button
-                /// Navigation button to proceed to the OTP screen.
-                CustomNavigationButton(
-                    title: AppStrings.send,
-                    backgroundColor: Color(UIColor.appOrangeColor),
-                    foregroundColor:Color(UIColor.appWhiteColor),
-                    action: { viewModel.NavigateToOtpView()}
-                )
-                Spacer()
-            }
-            .padding(.top, 30)
-            .onTapGesture {
-                // Dismiss keyboard when tapped outside input fields
-                UIApplication.shared.endEditing()
-            }
-            .navigationBarHidden(true)
-            .navigationBarBackButtonHidden()
+        
+            // MARK: Send Button
+            /// Navigation button to proceed to the OTP screen.
+            CustomNavigationButton(
+                title: AppStrings.send,
+                backgroundColor: Color(UIColor.appOrangeColor),
+                foregroundColor:Color(UIColor.appWhiteColor),
+                action: { viewModel.NavigateToOtpView()}
+            ).appTopPadding(34)
+            
+            Spacer()
         }
-       
+        .onTapGesture {
+            // Dismiss keyboard when tapped outside input fields
+            UIApplication.shared.endEditing()
+        }
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden()
     }
     
+}
+
 
 
 // MARK: - Preview
