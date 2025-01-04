@@ -13,6 +13,15 @@ struct AppStrings {
         static let onbordingSubTitle3 = "Real-time tracking of your food on the app once you placed the order."
         
     }
+    
+    struct ErrorMessages {
+        static let emailError = "Enter a valid email address"
+        static let passwordError = "Password should be at least 6 characters"
+        static let nameError = "Name cannot be empty"
+        static let mobileError = "Please enter a valid mobile number"
+        static let addressError = "Address cannot be empty"
+        static let confirmPasswordError = "Passwords do not match"
+    }
     static let login = "Login"
     static let loginDetails = "Add your details to login"
     static let email = "Your Email"

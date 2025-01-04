@@ -3,7 +3,7 @@ import SwiftUI
 
 struct OnBoardingView: View {
     @StateObject private var viewModel = OnboardingViewModel()
-
+    
     var body: some View {
         GeometryReader { geometry in
             VStack {
@@ -11,7 +11,7 @@ struct OnBoardingView: View {
                 TabView(selection: $viewModel.currentStepIndex) {
                     ForEach(viewModel.steps.indices, id: \.self) { index in
                         let step = viewModel.steps[index]
-                        VStack(spacing: 20) {
+                        VStack(spacing: 30) {
                             Image(step.image)
                                 .resizable()
                                 .scaledToFit()
@@ -20,20 +20,21 @@ struct OnBoardingView: View {
                             HStack(spacing: 8) {
                                 ForEach(viewModel.steps.indices, id: \.self) { dotIndex in
                                     Circle()
-                                        .fill(dotIndex == viewModel.currentStepIndex ? Color.orange : Color.gray)
+                                        .fill(dotIndex == viewModel.currentStepIndex ? Color(UIColor.appOrangeColor) : Color(UIColor.appLightGrayColor))
                                         .frame(width: 10, height: 10)
                                 }
-                            }
-                            .padding(.vertical, 16)
+                            }.appTopPadding(30)
+                            
                             Text(step.title)
-                                .font(.system(size: 28, weight: .regular))
+                                .font(AppFont.FontStyle.interRegular.font(size: 28))
                                 .foregroundColor(Color(UIColor.appDarkGeryColor))
+                                .appTopPadding(34)
                             Text(step.description)
-                                .font(.system(size: 13, weight: .regular))
+                                .font(AppFont.FontStyle.interRegular.font(size: 13))
                                 .foregroundColor(Color(UIColor.appSecondaryFontColor))
                                 .multilineTextAlignment(.center)
-                                .padding(.horizontal, 40)
-                                .padding(.top, 15)
+                                .padding(.horizontal, 52)
+                                .padding(.top, 33)
                             
                             CustomNavigationButton(
                                 title: AppStrings.next,
@@ -43,9 +44,9 @@ struct OnBoardingView: View {
                                     viewModel.NavigationToLoginMainView()
                                 }
                             )
-                            .padding(.top, 41)
+                            .appTopPadding(41)
                         }
-                        .tag(index) // Ensure the tag matches the type of `selection`
+                        .tag(index)
                     }
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))

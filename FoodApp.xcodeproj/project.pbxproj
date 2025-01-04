@@ -45,6 +45,8 @@
 		BD88C8932D27F7A300B008A1 /* SplashRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD88C88C2D27F7A300B008A1 /* SplashRoute.swift */; };
 		BD88C8942D27F7A300B008A1 /* NavigationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD88C88E2D27F7A300B008A1 /* NavigationService.swift */; };
 		BD88C8952D27F7A300B008A1 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD88C88F2D27F7A300B008A1 /* Routes.swift */; };
+		BD88C8992D2962E600B008A1 /* ValidationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD88C8982D2962E600B008A1 /* ValidationUtils.swift */; };
+		BD88C89B2D29639200B008A1 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD88C89A2D29639100B008A1 /* AlertView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +90,8 @@
 		BD88C88E2D27F7A300B008A1 /* NavigationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationService.swift; sourceTree = "<group>"; };
 		BD88C88F2D27F7A300B008A1 /* Routes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
 		BD88C8962D27FAD100B008A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BD88C8982D2962E600B008A1 /* ValidationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationUtils.swift; sourceTree = "<group>"; };
+		BD88C89A2D29639100B008A1 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,13 +124,14 @@
 		BD06326F2D22C1EC00571AE1 /* FoodApp */ = {
 			isa = PBXGroup;
 			children = (
+				BD88C8972D2962D400B008A1 /* Uitility */,
 				BD88C8962D27FAD100B008A1 /* Info.plist */,
 				BD88C8902D27F7A300B008A1 /* Services */,
-				BD88C8882D27F79C00B008A1 /* Resource */,
 				BD88C8852D27F79600B008A1 /* Preview Content */,
 				BD88C8702D27F78500B008A1 /* Module */,
 				BD88C8392D27F77500B008A1 /* Helper */,
 				BD88C82E2D27F76D00B008A1 /* CommonComponent */,
+				BD88C8882D27F79C00B008A1 /* Resource */,
 				BD88C8262D27F76800B008A1 /* App */,
 			);
 			path = FoodApp;
@@ -149,6 +154,7 @@
 				BD88C82B2D27F76D00B008A1 /* CustomTextField.swift */,
 				BD88C82C2D27F76D00B008A1 /* DidntReceiveLinkView.swift */,
 				BD88C82D2D27F76D00B008A1 /* SocialMediaButton.swift */,
+				BD88C89A2D29639100B008A1 /* AlertView.swift */,
 			);
 			path = CommonComponent;
 			sourceTree = "<group>";
@@ -451,6 +457,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		BD88C8972D2962D400B008A1 /* Uitility */ = {
+			isa = PBXGroup;
+			children = (
+				BD88C8982D2962E600B008A1 /* ValidationUtils.swift */,
+			);
+			path = Uitility;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -522,6 +536,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD88C87B2D27F78500B008A1 /* SignupView.swift in Sources */,
+				BD88C89B2D29639200B008A1 /* AlertView.swift in Sources */,
 				BD88C8942D27F7A300B008A1 /* NavigationService.swift in Sources */,
 				BD88C8912D27F7A300B008A1 /* AuthRoute.swift in Sources */,
 				BD88C8752D27F78500B008A1 /* NewPasswordView.swift in Sources */,
@@ -554,6 +569,7 @@
 				BD88C8772D27F78500B008A1 /* OtpView.swift in Sources */,
 				BD88C8732D27F78500B008A1 /* LoginMainView.swift in Sources */,
 				BD88C8822D27F78500B008A1 /* SplashViewModel.swift in Sources */,
+				BD88C8992D2962E600B008A1 /* ValidationUtils.swift in Sources */,
 				BD88C8712D27F78500B008A1 /* LoginView.swift in Sources */,
 				BD88C83D2D27F77500B008A1 /* ImageResources.swift in Sources */,
 				BD88C8782D27F78500B008A1 /* OTPViewModel.swift in Sources */,
