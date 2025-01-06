@@ -5,12 +5,12 @@ import SwiftUI
 /// ViewModel for handling login functionality and validation logic.
 class LoginMainViewModel: ObservableObject {
     
-    
-    func NavigateToLoginView () {
+    /// Navigates to the Login screen.
+    func onNavigateToLoginView () {
         NavigationService.shared.push(to: .auth(.login))
     }
-    
-    func NavigateToSignupView () {
+    /// Navigates to the Signup screen.
+    func onNavigateToSignupView () {
         NavigationService.shared.push(to: .auth(.signup))
     }
 }

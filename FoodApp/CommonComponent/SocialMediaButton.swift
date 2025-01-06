@@ -11,15 +11,17 @@ struct SocialMediaButton: View {
     var action: () -> Void
 
     // MARK: - Body
+    /// The view's body that defines the appearance of the social media button.
     var body: some View {
             Button(action: action) {
                 HStack {
+                    // Icon
                     Image(image)
                         .foregroundColor(Color(UIColor.appWhiteColor))
+                    // Title text
                     Text(title)
+                        .textStyle(size: 12, color: Color(UIColor.appWhiteColor),fontStyle: .interRegular)
                         .padding(.leading, 26)
-                        .font(AppFont.FontStyle.interRegular.font(size: 12))
-                        .foregroundColor(Color(UIColor.appWhiteColor))
                 }
                 .frame(maxWidth: .infinity, minHeight: 56, maxHeight: 56) // Fixed height
                 .padding(.horizontal)

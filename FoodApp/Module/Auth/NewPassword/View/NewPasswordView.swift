@@ -31,7 +31,7 @@ struct NewPasswordView: View {
                 title: AppStrings.next,
                 backgroundColor: Color(UIColor.appOrangeColor),
                 foregroundColor:Color(UIColor.appWhiteColor),
-                action: { viewModel.NavigateToNewPasswordView()}
+                action: { viewModel.onNavigateToNewPasswordView()}
             ).appTopPadding(28)
             
             // MARK: - Spacer Section

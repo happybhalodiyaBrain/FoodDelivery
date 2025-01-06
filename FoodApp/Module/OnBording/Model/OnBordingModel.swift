@@ -1,8 +1,8 @@
 import Foundation
 import SwiftUI
 
-// MARK: - FRUITS DATA MODEL
-
+// MARK: - OnboardingStep Model
+/// A data model representing a single step in the onboarding process.
 struct OnboardingStep: Identifiable {
     let id = UUID()
     let image: String

@@ -11,7 +11,6 @@ struct ResetPassView: View {
     var body: some View {
         
         VStack {
-            
             // MARK: Title and Subtitle
             VStack(spacing: 13) {
                 Text(AppStrings.resetPassword).appTitleStyle()
@@ -28,7 +27,7 @@ struct ResetPassView: View {
                 title: AppStrings.send,
                 backgroundColor: Color(UIColor.appOrangeColor),
                 foregroundColor:Color(UIColor.appWhiteColor),
-                action: { viewModel.NavigateToOtpView()}
+                action: { viewModel.onNavigateToOtpView()}
             ).appTopPadding(34)
             
             Spacer()

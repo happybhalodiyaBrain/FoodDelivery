@@ -11,7 +11,7 @@ struct LoginView: View {
                     Text(AppStrings.login).appTitleStyle()
                     Text(AppStrings.loginDetails).appSubtitleStyle()
                 }
-                
+                // MARK: - Input Fields
                 // Input fields for email and password
                 VStack(spacing: 28) {
                     CustomTextField(placeholder: AppStrings.email, text: $viewModel.email, keyboardType: .emailAddress)
@@ -20,31 +20,28 @@ struct LoginView: View {
                 .appTopPadding(35)
                 
                 // MARK: - Login Button
-                CustomButton(title: AppStrings.login, backgroundColor: Color(UIColor.appOrangeColor)) {
-                    viewModel.validateLogin {
+                CustomNavigationButton(
+                    title: AppStrings.login,
+                    backgroundColor: Color(UIColor.appOrangeColor),
+                    foregroundColor:Color(UIColor.appWhiteColor),
+                    action: { viewModel.validateLogin {
                         // Handle successful login logic here
                         print("Login successful!")
-                    }
-                }
-                .appHorizontalPadding(34)
+                    }}
+                )
                 
                 // MARK: - Forgot Password Button
-                Button(action: {
-                    print("Forgot password tapped")
-                }) {
-                    NavigationLink(destination: ResetPassView()) {
-                        Text(AppStrings.forgotPassword)
-                            .font(AppFont.FontStyle.interRegular.font(size: 14))
-                            .foregroundColor(Color(UIColor.appSecondaryFontColor))
+                Text(AppStrings.forgotPassword)
+                    .textStyle(size: 14, color: Color(UIColor.appSecondaryFontColor), fontStyle: .interRegular)
+                    .appTopPadding(25)
+                    .onTapGesture {
+                        viewModel.onNavigateToResetPasswordView()
                     }
-                }
-                .appTopPadding(25)
                 
                 // MARK: - Social Media Login Options
                 VStack {
                     Text(AppStrings.loginWith)
-                        .font(AppFont.FontStyle.interRegular.font(size: 14))
-                        .foregroundColor(Color(UIColor.appSecondaryFontColor))
+                        .textStyle(size: 14, color: Color(UIColor.appSecondaryFontColor), fontStyle: .interRegular)
                         .appTopPadding(51)
                     
                     VStack(spacing: 28) {
@@ -72,10 +69,9 @@ struct LoginView: View {
                 DidntReceiveLinkView(
                     message: AppStrings.signupLink,
                     linkText: AppStrings.clickHere,
-                    action: { viewModel.NavigateToSignupPage() }
+                    action: { viewModel.onNavigateToSignupPage() }
                 )
             }
-            .padding(.vertical)
             .navigationBarBackButtonHidden(true)
             .onTapGesture {
                 UIApplication.shared.endEditing()
@@ -83,8 +79,11 @@ struct LoginView: View {
         }
         .showAlert(
             isPresented: $viewModel.showAlert,
-            title: "Validation Error",
+            title:AppStrings.ErrorMessages.validationError,
             message: viewModel.alertMessage
         )
     }
+}
+#Preview {
+    LoginView()
 }

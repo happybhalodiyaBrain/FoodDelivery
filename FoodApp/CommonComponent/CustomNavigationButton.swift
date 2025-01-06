@@ -1,12 +1,19 @@
 import Foundation
 import SwiftUI
 
+
+// MARK: - Custom Navigation Button
+
+/// A custom button view used for navigation with customizable title, background, and foreground colors.
 struct CustomNavigationButton: View {
     var title: String
     var backgroundColor: Color
     var foregroundColor: Color
     var action: () -> Void
 
+    /// The body of the CustomNavigationButton.
+       ///
+       /// - Returns: A styled button with the given properties and action.
     var body: some View {
         Button(action: {
             action()

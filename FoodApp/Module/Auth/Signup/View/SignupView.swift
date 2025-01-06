@@ -7,39 +7,39 @@ struct SignupView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 13) {
-                // Title and Subtitle
+                // MARK: - Title and Subtitle
                 Text(AppStrings.signUp).appTitleStyle()
                 Text(AppStrings.signupSubtitle).appSubtitleStyle()
                 
-                // Input fields
+                // MARK: - Input Fields
                 VStack(spacing: 28) {
                     CustomTextField(placeholder: AppStrings.name, text: $viewModel.name)
-                    CustomTextField(placeholder: AppStrings.email, text: $viewModel.email)
-                    CustomTextField(placeholder: AppStrings.mobile, text: $viewModel.mobile)
+                    CustomTextField(placeholder: AppStrings.email, text: $viewModel.email, keyboardType: .emailAddress)
+                    CustomTextField(placeholder: AppStrings.mobile, text: $viewModel.mobile,keyboardType: .numberPad)
                     CustomTextField(placeholder: AppStrings.address, text: $viewModel.address)
                     CustomTextField(placeholder: AppStrings.password, text: $viewModel.password, isSecure: true)
                     CustomTextField(placeholder: AppStrings.confirmPassword, text: $viewModel.confirmPassword, isSecure: true)
                 }
                 .padding(.top, 35)
                 
-                // Sign Up Button
-                CustomButton(title: AppStrings.signUp, backgroundColor: Color(UIColor.appOrangeColor)) {
-                    viewModel.validateInputs {
+                //MARK: - Sign up Button
+                CustomNavigationButton(
+                    title: AppStrings.signUp,
+                    backgroundColor: Color(UIColor.appOrangeColor),
+                    foregroundColor:Color(UIColor.appWhiteColor),
+                    action: { viewModel.validateInputs {
+                        // Handle successful login logic here
                         print("Sign up successful!")
-                        // Add additional sign-up logic here
-                    }
-                }
-                .appHorizontalPadding(30)
-                .appTopPadding(28)
-                
-                // Login Link
+                    }}
+                ).appTopPadding(28)
+            
+                // MARK: - Login Link
                 DidntReceiveLinkView(
                     message: AppStrings.loginLink,
                     linkText: AppStrings.clickHere,
                     action: { viewModel.onNavigateToLogin() }
                 ).appTopPadding(25)
             }
-            .padding(.vertical)
             .navigationBarBackButtonHidden(true)
             .onTapGesture {
                 UIApplication.shared.endEditing()
@@ -47,7 +47,7 @@ struct SignupView: View {
         }
         .showAlert(
             isPresented: $viewModel.showAlert,
-            title: "Validation Error",
+            title: AppStrings.ErrorMessages.validationError,
             message: viewModel.alertMessage
         )
     }

@@ -11,7 +11,6 @@ struct OtpView: View {
     var body: some View {
     
             VStack {
-                
                 // MARK: - Title and Subtitle Section
                 VStack(spacing: 13) {
                     Text(AppStrings.otpTitle)
@@ -46,7 +45,7 @@ struct OtpView: View {
                     title: AppStrings.next,
                     backgroundColor: Color(UIColor.appOrangeColor),
                     foregroundColor:Color(UIColor.appWhiteColor),
-                    action: {viewModel.NavigateToNewPasswordView()}
+                    action: {viewModel.onNavigateToNewPasswordView()}
                 ).appTopPadding(36)
                 
                 // MARK: - "Didn't Receive OTP?" Link Section
@@ -54,7 +53,7 @@ struct OtpView: View {
                     message: AppStrings.DidntReceive,
                     linkText: AppStrings.clickHere,
                     action:{
-                        viewModel.NavigateToResetPasswordView()
+                        viewModel.onNavigateToResetPasswordView()
                     }
                 ).appTopPadding(33)
                 

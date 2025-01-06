@@ -21,6 +21,7 @@ struct AppStrings {
         static let mobileError = "Please enter a valid mobile number"
         static let addressError = "Address cannot be empty"
         static let confirmPasswordError = "Passwords do not match"
+        static let validationError = "Validation Error"
     }
     static let login = "Login"
     static let loginDetails = "Add your details to login"

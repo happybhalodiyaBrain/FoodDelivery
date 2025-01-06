@@ -7,15 +7,11 @@ extension Text {
     
     /// - This style uses a large title font, regular font weight, and the dark gray color for text.
     func appTitleStyle() -> some View {
-        self.font(AppFont.FontStyle.interRegular.font(size: 30))
-            .foregroundColor(Color(UIColor.appDarkGeryColor))
-            .multilineTextAlignment(.center)
+        self.textStyle(size: 30, color: Color(UIColor.appDarkGeryColor), fontStyle: .interRegular)
     }
     /// - This style uses a subheadline font and the secondary font color for text.
     func appSubtitleStyle() -> some View {
-        self.font(AppFont.FontStyle.interRegular.font(size: 14))
-            .foregroundColor(Color(UIColor.appSecondaryFontColor))
-            .multilineTextAlignment(.center)
+        self.textStyle(size: 14, color: Color(UIColor.appSecondaryFontColor), fontStyle: .interRegular)
             .appHorizontalPadding(55)
     }
 }
@@ -40,8 +36,8 @@ extension UIApplication {
     /// Dismisses the keyboard in the app by ending editing in the first window.
     func endEditing() {
         if let windowScene = connectedScenes.first as? UIWindowScene {
-                   windowScene.windows.first?.endEditing(true)
-               }
+            windowScene.windows.first?.endEditing(true)
+        }
     }
 }
 

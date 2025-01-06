@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD3361442D2B92E0008B1299 /* TextStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3361432D2B92E0008B1299 /* TextStyles.swift */; };
 		BD88C8272D27F76800B008A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD88C8242D27F76800B008A1 /* ContentView.swift */; };
 		BD88C8282D27F76800B008A1 /* FoodAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD88C8252D27F76800B008A1 /* FoodAppApp.swift */; };
-		BD88C82F2D27F76E00B008A1 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD88C8292D27F76D00B008A1 /* CustomButton.swift */; };
 		BD88C8302D27F76E00B008A1 /* CustomNavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD88C82A2D27F76D00B008A1 /* CustomNavigationButton.swift */; };
 		BD88C8312D27F76E00B008A1 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD88C82B2D27F76D00B008A1 /* CustomTextField.swift */; };
 		BD88C8322D27F76E00B008A1 /* DidntReceiveLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD88C82C2D27F76D00B008A1 /* DidntReceiveLinkView.swift */; };
@@ -51,9 +51,9 @@
 
 /* Begin PBXFileReference section */
 		BD06326D2D22C1EC00571AE1 /* FoodApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD3361432D2B92E0008B1299 /* TextStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyles.swift; sourceTree = "<group>"; };
 		BD88C8242D27F76800B008A1 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BD88C8252D27F76800B008A1 /* FoodAppApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodAppApp.swift; sourceTree = "<group>"; };
-		BD88C8292D27F76D00B008A1 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		BD88C82A2D27F76D00B008A1 /* CustomNavigationButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationButton.swift; sourceTree = "<group>"; };
 		BD88C82B2D27F76D00B008A1 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		BD88C82C2D27F76D00B008A1 /* DidntReceiveLinkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DidntReceiveLinkView.swift; sourceTree = "<group>"; };
@@ -149,7 +149,6 @@
 		BD88C82E2D27F76D00B008A1 /* CommonComponent */ = {
 			isa = PBXGroup;
 			children = (
-				BD88C8292D27F76D00B008A1 /* CustomButton.swift */,
 				BD88C82A2D27F76D00B008A1 /* CustomNavigationButton.swift */,
 				BD88C82B2D27F76D00B008A1 /* CustomTextField.swift */,
 				BD88C82C2D27F76D00B008A1 /* DidntReceiveLinkView.swift */,
@@ -167,6 +166,7 @@
 				BD88C8362D27F77500B008A1 /* Color + Extention.swift */,
 				BD88C8372D27F77500B008A1 /* ImageResources.swift */,
 				BD88C8382D27F77500B008A1 /* UI + Extention.swift */,
+				BD3361432D2B92E0008B1299 /* TextStyles.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -564,10 +564,10 @@
 				BD88C83C2D27F77500B008A1 /* Color + Extention.swift in Sources */,
 				BD88C8332D27F76E00B008A1 /* SocialMediaButton.swift in Sources */,
 				BD88C8302D27F76E00B008A1 /* CustomNavigationButton.swift in Sources */,
-				BD88C82F2D27F76E00B008A1 /* CustomButton.swift in Sources */,
 				BD88C8312D27F76E00B008A1 /* CustomTextField.swift in Sources */,
 				BD88C8772D27F78500B008A1 /* OtpView.swift in Sources */,
 				BD88C8732D27F78500B008A1 /* LoginMainView.swift in Sources */,
+				BD3361442D2B92E0008B1299 /* TextStyles.swift in Sources */,
 				BD88C8822D27F78500B008A1 /* SplashViewModel.swift in Sources */,
 				BD88C8992D2962E600B008A1 /* ValidationUtils.swift in Sources */,
 				BD88C8712D27F78500B008A1 /* LoginView.swift in Sources */,

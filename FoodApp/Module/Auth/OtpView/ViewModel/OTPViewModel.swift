@@ -3,11 +3,14 @@ import SwiftUI
 
 /// ViewModel for handling login functionality and validation logic.
 class OTPViewModel: ObservableObject {
-    func NavigateToNewPasswordView() {
+    
+    /// Navigates to the New password  screen.
+    func onNavigateToNewPasswordView() {
         NavigationService.shared.push(to: .auth(.newPassword))
-
     }
-    func NavigateToResetPasswordView () {
+    
+    /// Navigates to the Reset password  screen.
+    func onNavigateToResetPasswordView () {
         NavigationService.shared.push(to: .auth(.resetPassword))
     }
 }

@@ -1,58 +1,61 @@
 import SwiftUI
 
 struct LoginMainView: View {
-    
+    // MARK: - ViewModel
+    /// ViewModel for handling login and signup navigation logic.
     @StateObject private var viewModel = LoginMainViewModel()
     
     var body: some View {
         VStack{
+            // MARK: - Background Image
             ZStack{
                 Image(AppImages.Organetopshape.rawValue)
                     .resizable()
                     .scaledToFit()
             }
+            // MARK: - Main Content
             VStack {
+                /// Logo Image
                 Image(AppImages.monkeyFace.rawValue)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 100, height: 100)
                     .padding(.top, -150)
-                
+                // MARK: - Title
                 HStack {
                     Text(AppStrings.meal)
-                        .font(AppFont.FontStyle.interBold.font(size: 34))
-                        .foregroundColor(Color(UIColor.appOrangeColor))
+                        .textStyle(size: 34, color: Color(UIColor.appOrangeColor), fontStyle: .interBold)
+                    
                     Text(AppStrings.monkey)
-                        .font(AppFont.FontStyle.interBold.font(size: 34))
-                        .foregroundColor(Color(UIColor.appDarkGeryColor))
+                        .textStyle(size: 34, color: Color(UIColor.appDarkGeryColor), fontStyle: .interBold)
                 }.padding(.top, -15)
-                
+                // MARK: - Subtitle
                 Text(AppStrings.foodDelivery)
-                    .foregroundColor(Color(UIColor.appSecondaryFontColor))
-                    .font(AppFont.FontStyle.interRegular.font(size: 10))
+                    .textStyle(size: 10, color: Color(UIColor.appSecondaryFontColor), fontStyle: .interRegular)
                     .tracking(2)
                     .appTopPadding(5)
-                
+                // MARK: - Login Note
                 Text(AppStrings.loginNote)
-                    .font(AppFont.FontStyle.interRegular.font(size: 13))
-                    .foregroundColor(Color(UIColor.appSecondaryFontColor))
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, 52)
-                    .padding(.top, 33)
+                    .textStyle(size: 13, color: Color(UIColor.appSecondaryFontColor),
+                               fontStyle: .interRegular)
+                    .appHorizontalPadding(52)
+                    .appTopPadding(33)
                 
+                // MARK: - Action Buttons
                 VStack(spacing: 20) {
+                    // Login Button
                     CustomNavigationButton(
                         title: AppStrings.login,
                         backgroundColor: Color(UIColor.appOrangeColor),
                         foregroundColor:Color(UIColor.appWhiteColor),
-                        action: { viewModel.NavigateToLoginView()}
+                        action: { viewModel.onNavigateToLoginView()}
                     )
-                    
+                    // Create Account Button
                     CustomNavigationButton(
                         title: AppStrings.createAccount,
                         backgroundColor: Color(UIColor.appWhiteColor),
                         foregroundColor:Color(UIColor.appOrangeColor),
-                        action: { viewModel.NavigateToSignupView()}
+                        action: { viewModel.onNavigateToSignupView()}
                     )
                 }
                 .padding(.top, 37)
