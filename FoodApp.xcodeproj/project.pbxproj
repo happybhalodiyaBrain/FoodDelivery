@@ -148,12 +148,12 @@
 			children = (
 				BD88C8972D2962D400B008A1 /* Uitility */,
 				BD88C8962D27FAD100B008A1 /* Info.plist */,
-				BD88C8902D27F7A300B008A1 /* Services */,
 				BD88C8852D27F79600B008A1 /* Preview Content */,
 				BD88C8702D27F78500B008A1 /* Module */,
 				BD88C8392D27F77500B008A1 /* Helper */,
 				BD88C82E2D27F76D00B008A1 /* CommonComponent */,
 				BD88C8882D27F79C00B008A1 /* Resource */,
+				BD88C8902D27F7A300B008A1 /* Services */,
 				BD88C8262D27F76800B008A1 /* App */,
 			);
 			path = FoodApp;

@@ -31,7 +31,6 @@ struct LoginView: View {
                         // Handle successful login logic here
                         print("Login successful!")
                         NavigationService.shared.updateLoginStatus(true)
-                                   NavigationService.shared.popToRoot(push: .tabbar(.menu))
                     }}
                 )
                 

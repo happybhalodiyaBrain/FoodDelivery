@@ -1,17 +1,21 @@
 import SwiftUI
 
-/// MARK: - TabbarRoutes
-extension Routes.TabbarRoutes {
-    /// Returns the appropriate view based on the tab bar route.
+/// Tabbar Route Builder
+struct TabbarRouteBuilder {
+    
+    // MARK: - Variable(s)
+    let routes: Routes.TabbarRoutes
+    
+    // MARK: - ViewBuilder function
     @ViewBuilder
-    func destinationView() -> some View {
-        switch self {
-        case .menu:
-            MenuView()
-        case .offers:
-            OffersView()
+    func configure() -> some View {
+        switch routes {
         case .home:
             HomeView()
+        case .menu(let menuRoutes):
+            MenuRouteBuilder(route: menuRoutes).configure()
+        case .offer:
+            OffersView()
         case .profile:
             ProfileView()
         case .more:
@@ -19,3 +23,24 @@ extension Routes.TabbarRoutes {
         }
     }
 }
+
+/// Menu Route Builder
+struct MenuRouteBuilder {
+    
+    // MARK: - Variable(s)
+    let route: Routes.TabbarRoutes.MenuRoutes
+    
+    // MARK: - ViewBuilder function
+    @ViewBuilder
+    func configure() -> some View {
+        switch route {
+        case .menuListview(let title):
+            Text("hi")
+        case .menuDetail:
+            Text("hi")
+        }
+    }
+}
+
+
+

@@ -18,7 +18,7 @@ class ResetPassViewModel: ObservableObject {
             showAlert = true
         } else {
             showAlert = false
-            NavigationService.shared.push(to: .auth(.verifyOTP))
+            NavigationService.shared.push(to: .auth(.otpView))
         }
     }
 }

@@ -4,23 +4,25 @@ import Combine
 
 class SplashViewModel: ObservableObject {
     @Published var isSplashActive: Bool = true
-    
+    @Published var showSplash: Bool = true
+
     init() {
         startSplashSequence()
     }
     private func startSplashSequence() {
            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-               self.isSplashActive = false
+               self.showSplash = false
                self.navigatePostSplash()
            }
        }
     
     /// Navigate tp onBording screen
     private func navigatePostSplash() {
+        print(NavigationService.shared.isLoggedIn)
         if NavigationService.shared.isLoggedIn {
-            NavigationService.shared.push(to: .tabbar(.menu))
+            TabBarView()
         } else {
-            NavigationService.shared.push(to: .splash(.onBoarding))
+            NavigationService.shared.push(to: .splash(.onboarding))
         }
     }
 }
