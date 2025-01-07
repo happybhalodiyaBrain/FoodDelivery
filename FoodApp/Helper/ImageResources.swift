@@ -29,8 +29,18 @@ enum Icons: String {
 }
 
 enum MenuItem: String {
-    case category = "category"
-    case popular = "popular"
+    case category1 = "category1"
+    case category2 = "category2"
+    case category3 = "category3"
+   
+    case popular1 = "popular1"
+    case popular2 = "popular2"
+    case popular3 = "popular3"
+    
     case mostPopular = "mostPopular"
-    case recent = "recent"
+    
+    case recent1 = "recent1"
+    case recent2 = "recent2"
+    case recent3 = "recent3"
+
 }
