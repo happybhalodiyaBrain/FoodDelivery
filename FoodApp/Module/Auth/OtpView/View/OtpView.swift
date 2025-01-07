@@ -4,7 +4,7 @@ struct OtpView: View {
     
     // MARK: - Properties
     /// A state variable that holds the OTP input values.
-    @State private var otp: [String] = Array(repeating: "", count: 4)
+    @State private var otpValue: [String] = ["", "", "", ""]
     @StateObject private var viewModel = OTPViewModel()
 
     // MARK: - Body
@@ -22,20 +22,21 @@ struct OtpView: View {
                 
                 // MARK: - OTP Input Fields Section
                 HStack(spacing: 28) {
-                    ForEach(0..<otp.count, id: \.self) { index in
-                        TextField("*", text: Binding(
-                            get: { otp[index] },
-                            set: { newValue in
-                                // Ensure that only one character is entered per field
-                                otp[index] = String(newValue.prefix(1))
+                    ForEach(0..<4, id: \.self) { index in
+                        TextField("", text: $otpValue[index])
+                            .frame(width: 60, height: 57)
+                            .font(AppFont.FontStyle.interRegular.font(size: 24))
+                            .multilineTextAlignment(.center)
+                            .keyboardType(.numberPad)
+                            .background(Color(UIColor.appLightGrayColor))
+                            .cornerRadius(12)
+                            .onChange(of: otpValue[index]) { newValue in
+                                
+                                // Limit input to one character
+                                if newValue.count > 1 {
+                                    otpValue[index] = String(newValue.prefix(1))
+                                }
                             }
-                        ))
-                        .keyboardType(.numberPad)
-                        .multilineTextAlignment(.center)
-                        .font(.system(size: 20, weight: .semibold))
-                        .frame(width: 56, height: 56)
-                        .background(Color(UIColor.appLightGrayColor))
-                        .cornerRadius(8)
                     }
                 }
                 .appTopPadding(53)
@@ -60,6 +61,7 @@ struct OtpView: View {
                 // MARK: - Spacer Section
                 Spacer()
             }
+            .padding(.vertical)
             .onTapGesture {
                 // Dismiss keyboard when tapped outside input fields
                 UIApplication.shared.endEditing()

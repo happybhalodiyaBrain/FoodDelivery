@@ -20,7 +20,7 @@ struct ResetPassView: View {
             // MARK: Email Input Field
             CustomTextField(placeholder: AppStrings.email, text: $viewModel.email)
                 .appTopPadding(40)
-        
+            
             // MARK: Send Button
             /// Navigation button to proceed to the OTP screen.
             CustomNavigationButton(
@@ -32,12 +32,18 @@ struct ResetPassView: View {
             
             Spacer()
         }
+        .padding(.vertical)
         .onTapGesture {
             // Dismiss keyboard when tapped outside input fields
             UIApplication.shared.endEditing()
         }
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden()
+        .showAlert(
+            isPresented: $viewModel.showAlert,
+            title: AppStrings.ErrorMessages.validationError,
+            message: viewModel.alertMessage
+        )
     }
     
 }

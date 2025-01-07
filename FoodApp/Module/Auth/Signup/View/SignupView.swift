@@ -2,8 +2,12 @@ import SwiftUI
 
 /// The view for the Sign-Up screen, allowing users to enter their details.
 struct SignupView: View {
+    
+    // MARK: - ViewModel
+    /// ViewModel for handling navigation logic.
     @StateObject private var viewModel = SignupViewModel()
     
+    // MARK: - Body
     var body: some View {
         ScrollView {
             VStack(spacing: 13) {
@@ -40,6 +44,7 @@ struct SignupView: View {
                     action: { viewModel.onNavigateToLogin() }
                 ).appTopPadding(25)
             }
+            .padding(.vertical)
             .navigationBarBackButtonHidden(true)
             .onTapGesture {
                 UIApplication.shared.endEditing()

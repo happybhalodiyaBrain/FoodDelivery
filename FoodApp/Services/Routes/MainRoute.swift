@@ -6,8 +6,16 @@ extension Routes.TabbarRoutes {
     @ViewBuilder
     func destinationView() -> some View {
         switch self {
+        case .menu:
+            MenuView()
+        case .offers:
+            OffersView()
         case .home:
-            TabsView()
+            HomeView()
+        case .profile:
+            ProfileView()
+        case .more:
+            MoreView()
         }
     }
 }

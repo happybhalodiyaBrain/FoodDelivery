@@ -20,8 +20,9 @@ struct AppStrings {
         static let nameError = "Name cannot be empty"
         static let mobileError = "Please enter a valid mobile number"
         static let addressError = "Address cannot be empty"
-        static let confirmPasswordError = "Passwords do not match"
+        static let confirmPasswordError = "Confirm password does not match with password"
         static let validationError = "Validation Error"
+        
     }
     static let login = "Login"
     static let loginDetails = "Add your details to login"
@@ -55,4 +56,6 @@ struct AppStrings {
     static let newPasswordNote = "Please enter your email to receive a link to  create a new password via email"
     static let loginNote = "Discover the best foods from over 1,000 restaurants and fast delivery to your doorstep"
     static let createAccount = "Create an Account"
+    
+    static let menuPageTitle = "Good morning Akila!"
 }

@@ -8,9 +8,17 @@ class ResetPassViewModel: ObservableObject {
     
     /// The email entered by the user.
     @Published var email: String = ""
+    @Published var showAlert: Bool = false
+    @Published var alertMessage: String = ""
     
-    /// Navigate to otp view
+    /// Validates the email and navigates to the OTP view if valid.
     func onNavigateToOtpView() {
-        NavigationService.shared.push(to: .auth(.verifyOTP))
+        if !ValidationUtils.isValidEmail(email) {
+            alertMessage = AppStrings.ErrorMessages.emailError
+            showAlert = true
+        } else {
+            showAlert = false
+            NavigationService.shared.push(to: .auth(.verifyOTP))
+        }
     }
 }

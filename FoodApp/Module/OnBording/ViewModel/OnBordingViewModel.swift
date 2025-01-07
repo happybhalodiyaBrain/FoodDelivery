@@ -1,7 +1,8 @@
 import SwiftUI
 
 class OnboardingViewModel: ObservableObject {
-    
+    @EnvironmentObject private var navigationService: NavigationService
+
     // MARK: - Published Properties
     @Published var steps: [OnboardingStep] = [
         OnboardingStep(image: AppImages.onBording1.rawValue,

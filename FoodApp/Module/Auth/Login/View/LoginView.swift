@@ -1,8 +1,11 @@
 import SwiftUI
 
 struct LoginView: View {
+    // MARK: - ViewModel
+    /// ViewModel for handling navigation logic.
     @StateObject private var viewModel = LoginViewModel()
     
+    // MARK: - Body
     var body: some View {
         ScrollView {
             VStack(spacing: 35) {
@@ -27,6 +30,8 @@ struct LoginView: View {
                     action: { viewModel.validateLogin {
                         // Handle successful login logic here
                         print("Login successful!")
+                        NavigationService.shared.updateLoginStatus(true)
+                                   NavigationService.shared.popToRoot(push: .tabbar(.menu))
                     }}
                 )
                 
@@ -45,6 +50,7 @@ struct LoginView: View {
                         .appTopPadding(51)
                     
                     VStack(spacing: 28) {
+                        /// Facebook login button
                         SocialMediaButton(
                             title: AppStrings.loginwithFacebook,
                             image: AppImages.facebook.rawValue,
@@ -52,7 +58,7 @@ struct LoginView: View {
                         ) {
                             print("Login with Facebook tapped")
                         }
-                        
+                        /// Google  login button 
                         SocialMediaButton(
                             title: AppStrings.loginwithgoogle,
                             image: AppImages.google.rawValue,
@@ -72,6 +78,7 @@ struct LoginView: View {
                     action: { viewModel.onNavigateToSignupPage() }
                 )
             }
+            .padding(.vertical)
             .navigationBarBackButtonHidden(true)
             .onTapGesture {
                 UIApplication.shared.endEditing()

@@ -2,7 +2,8 @@ import SwiftUI
 
 struct NewPasswordView: View {
     
-    // MARK: - Properties
+    // MARK: - ViewModel
+    /// ViewModel for handling navigation logic.
     @StateObject private var viewModel = NewPassordViewModel()
     
     // MARK: - Body
@@ -17,8 +18,8 @@ struct NewPasswordView: View {
             
             // MARK: - Input Fields Section
             VStack(spacing: 28) {
-                CustomTextField(placeholder: AppStrings.newPassword, text: $viewModel.newPassowrd)
-                CustomTextField(placeholder: AppStrings.confiemPassword, text: $viewModel.confirmPassowrd)
+                CustomTextField(placeholder: AppStrings.newPassword, text: $viewModel.newPassowrd, isSecure: true)
+                CustomTextField(placeholder: AppStrings.confiemPassword, text: $viewModel.confirmPassowrd, isSecure: true)
             }
             .appTopPadding(38)
             .onTapGesture {
@@ -40,6 +41,11 @@ struct NewPasswordView: View {
         .padding(.vertical)
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden()
+        .showAlert(
+            isPresented: $viewModel.showAlert,
+            title: AppStrings.ErrorMessages.validationError,
+            message: viewModel.alertMessage
+        )
     }
 }
 

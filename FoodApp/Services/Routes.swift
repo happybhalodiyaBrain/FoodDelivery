@@ -26,7 +26,11 @@ enum Routes: Hashable {
 
     // MARK: - Tabbar Routes
     enum TabbarRoutes: Hashable {
+        case menu
+        case offers
         case home
+        case profile
+        case more
     }
 
     // MARK: - Destination View Method
