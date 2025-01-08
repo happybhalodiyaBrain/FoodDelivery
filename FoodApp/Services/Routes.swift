@@ -82,7 +82,7 @@ enum Routes: Hashable {
         
         // MARK: - Sub-Routes of Menu tab
         enum MenuRoutes: Hashable {
-            case menuListview(title: String)
+            case menuList(title: String)
             case menuDetail
         }
         

@@ -34,8 +34,8 @@ struct MenuRouteBuilder {
     @ViewBuilder
     func configure() -> some View {
         switch route {
-        case .menuListview(let title):
-            Text("hi")
+        case .menuList(let title):
+            MenuList(title: title)
         case .menuDetail:
             Text("hi")
         }

@@ -1,46 +1,24 @@
 import Foundation
 
+/// ViewModel for managing the Menu data and navigation logic.
 class MenuViewModel: ObservableObject {
-    // Categories Data
-    @Published var categories: [CategoryItem] = []
     
-    // Popular Restaurants Data
-    @Published var popularRestaurants: [RestaurantItem] = []
+    // MARK: - Properties
+    /// A list of menu items to be displayed in the app.
+    let menuItems: [MenuModel] = [
+        MenuModel(imageName: MenuLists.food.rawValue, title: AppStrings.food, items: AppStrings.Items120),
+        MenuModel(imageName: MenuLists.beverages.rawValue, title: AppStrings.beverages, items: AppStrings.Items220),
+        MenuModel(imageName: MenuLists.desserts.rawValue, title: AppStrings.desserts, items: AppStrings.Items155),
+        MenuModel(imageName: MenuLists.promotions.rawValue, title: AppStrings.promotions, items: AppStrings.Items25),
+    ]
     
-    // Most Popular Restaurants Data
-    @Published var mostPopularRestaurants: [RestaurantItem] = []
+    // MARK: - Navigation Methods
     
-    // Recent Items Data
-    @Published var recentItems: [RestaurantItem] = []
-    
-    init() {
-        loadSampleData()
-    }
-    
-    private func loadSampleData() {
-        // Simulating sample data
-        categories = [
-            CategoryItem(imageName: MenuItem.category1.rawValue, title: "Offers"),
-            CategoryItem(imageName: MenuItem.category2.rawValue, title: "Sri Lankan"),
-            CategoryItem(imageName: MenuItem.category3.rawValue, title: "Italian"),
-            CategoryItem(imageName: MenuItem.category1.rawValue, title: "Indian")
-        ]
-        
-        popularRestaurants = [
-            RestaurantItem(imageName:MenuItem.popular1.rawValue, name: "Minute by tuk tuk", rating: "4.9", category: "Cafe • Western Food", ratingNumber: "(124 Ratings)"),
-            RestaurantItem(imageName: MenuItem.popular2.rawValue, name: "Café de Noir", rating: "4.9", category: "Cafe • Western Food", ratingNumber: "(124 Ratings)"),
-            RestaurantItem(imageName: MenuItem.popular3.rawValue, name: "Bakes by Tella", rating: "4.9", category: "Cafe • Western Food", ratingNumber: "(124 Ratings)")
-        ]
-        
-        mostPopularRestaurants = [
-            RestaurantItem(imageName: MenuItem.mostPopular.rawValue, name: "Café De Bambaa", rating: "4.9", category: "Cafe • Western Food", ratingNumber: "(124 Ratings)"),
-            RestaurantItem(imageName: MenuItem.mostPopular.rawValue, name: "Burger by Bistro", rating: "4.9", category: "Cafe • Western Food", ratingNumber: "(124 Ratings)")
-        ]
-        
-        recentItems = [
-            RestaurantItem(imageName: MenuItem.recent2.rawValue, name: "Mulberry Pizza by Josh", rating: "4.9", category: "Cafe • Western Food", ratingNumber: "(124 Ratings)"),
-            RestaurantItem(imageName: MenuItem.recent1.rawValue, name: "Barista", rating: "4.9", category: "Cafe • Coffee", ratingNumber: "(144 Ratings)"),
-            RestaurantItem(imageName: MenuItem.recent3.rawValue, name: "Pizza Rush Hour", rating: "4.9", category: "Cafe • Italian Food", ratingNumber: "(134 Ratings)")
-        ]
+    /// Navigates to the menu list screen based on the provided title.
+    /// - Parameter title: The title of the menu list to navigate to.
+    func onNavigateToMenuList (title: String) {
+        NavigationService.shared.push(to: .tabbar(.menu(.menuList(title: title))))
     }
 }
+
+

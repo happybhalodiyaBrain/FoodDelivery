@@ -1,7 +1,7 @@
 import SwiftUI
 
 class TabBarViewModel: ObservableObject {
-    @Published var selectedTab: Tab = .menu
+    @Published var selectedTab: Tab = .home
 
     let tabs: [TabItem] = [
         TabItem(title: "Menu", iconName: TabIcon.menu.rawValue, tab: .menu),

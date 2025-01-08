@@ -22,8 +22,8 @@ struct AppStrings {
         static let addressError = "Address cannot be empty"
         static let confirmPasswordError = "Confirm password does not match with password"
         static let validationError = "Validation Error"
-        
     }
+    
     static let login = "Login"
     static let loginDetails = "Add your details to login"
     static let email = "Your Email"
@@ -56,6 +56,38 @@ struct AppStrings {
     static let newPasswordNote = "Please enter your email to receive a link to  create a new password via email"
     static let loginNote = "Discover the best foods from over 1,000 restaurants and fast delivery to your doorstep"
     static let createAccount = "Create an Account"
+    static let searchFood = "Search food"
+    static let deliveringTo = "Delivering to"
+    static let popularRestaurants = "Popular Restaurants"
+    static let mostPopular = "Most Popular"
+    static let recentItems = "Recent Items"
     
-    static let menuPageTitle = "Good morning Akila!"
+    struct title {
+        static let homeTitle = "Good morning Akila!"
+        static let menuTitle = "Menu"
+    }
+    
+    static let food = "Food"
+    static let beverages = "Beverages"
+    static let desserts = "Desserts"
+    static let promotions = "Promotions"
+    
+    static let Items120 = "120"
+    static let Items220 = "220"
+    static let Items155 = "155"
+    static let Items25 = "25"
+    
+    static let menuList1 = "French Apple Pie"
+    static let menuList2 = "Dark Chocolate Cake"
+    static let menuList3 = "Street Shake"
+    static let menuList4 = "Fudgy Chewy Brownies"
+    
+    static let listCategory = "Minute by tuk tuk"
+    
+    struct location {
+        static let currentLocation  = "Current Location"
+        static let home  = "Home"
+        static let work  = "Work"
+        static let other  = "Other"
+    }
 }
