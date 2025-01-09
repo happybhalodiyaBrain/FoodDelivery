@@ -16,7 +16,6 @@ struct SearchBar: View {
     var body: some View {
         HStack {
             Image(Icons.search.rawValue)
-                .foregroundColor(.gray)
                 .padding(.leading, 8)
             
             TextField("Search food", text: $searchQuery)
@@ -26,7 +25,7 @@ struct SearchBar: View {
         .frame(height: 45)
         .background(Color(UIColor.appLightGrayColor))
         .cornerRadius(20)
-        .shadow(color: .gray.opacity(0.4), radius: 2, x: 0, y: 3)
+        .shadow(color: Color(UIColor.appDarkGeryColor).opacity(0.4), radius: 2, x: 0, y: 5)
         .padding(.horizontal, 21)
     }
 }

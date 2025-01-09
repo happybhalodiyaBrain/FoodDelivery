@@ -11,9 +11,9 @@ struct FoodItem: Identifiable {
     /// The image name used to display the food item in the UI.
     let imageName: String
     /// The rating of the food item (e.g., 4.5 out of 5).
-    let rating: Double
+    let rating: String
     /// The primary category of the food item (e.g., "Desserts").
-    let category1: String
+    let primaryCategory: String
     /// The secondary category of the food item (e.g., "Snacks").
-    let category2: String
+    let secondaryCategory: String
 }

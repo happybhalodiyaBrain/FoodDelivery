@@ -28,21 +28,16 @@ struct FoodItemView: View {
                                fontStyle: .interBold)
                 
                 HStack{
-                    Image(Icons.star.rawValue)
-                        .frame(width: 10, height: 10)
-                    Text("2.0")
-                        .textStyle(size: 11, color: Color(UIColor.appOrangeColor),
-                                   fontStyle: .interSemibold)
-                    
-                    Text(foodItem.category1)
-                        .textStyle(size: 12, color: Color(UIColor.appWhiteColor),
-                                   fontStyle: .interSemibold)
-                    Image(AppImages.dot.rawValue)
-                        .frame(width: 10, height: 10)
-                    Text(foodItem.category2)
-                        .textStyle(size: 12, color: Color(UIColor.appWhiteColor),
-                                   fontStyle: .interSemibold)
-                    
+                    RatingStarView(
+                        icon: Icons.star.rawValue,
+                        rating: foodItem.rating,
+                        ratingNumber: ""
+                    )
+                    ProductCategory(
+                        primaryCategory: foodItem.primaryCategory,
+                        secondaryCategory: foodItem.secondaryCategory,
+                        textColor: Color(UIColor.appWhiteColor)
+                    )
                 }
             }
             .padding(.horizontal, 21)
@@ -54,5 +49,5 @@ struct FoodItemView: View {
 }
 
 #Preview {
-    FoodItemView(foodItem: FoodItem( title: "French Apple Pie", imageName: MenuLists.menuList1.rawValue, rating: 4.1, category1: "9 Minute", category2: "Desserts"))
+    FoodItemView(foodItem: FoodItem( title: "French Apple Pie", imageName: MenuLists.menuList1.rawValue, rating: "4.1", primaryCategory: "9 Minute", secondaryCategory: "Desserts"))
 }

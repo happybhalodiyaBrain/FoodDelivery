@@ -61,6 +61,7 @@ struct AppStrings {
     static let popularRestaurants = "Popular Restaurants"
     static let mostPopular = "Most Popular"
     static let recentItems = "Recent Items"
+    static let viewAll = "View all"
     
     struct title {
         static let homeTitle = "Good morning Akila!"

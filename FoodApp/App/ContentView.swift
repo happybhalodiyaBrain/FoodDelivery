@@ -33,9 +33,6 @@ struct ContentView: View {
                     .environmentObject(navigationService)
                 }
             }
-            .onAppear {
-                // Optional: Log or perform setup actions when the app starts.
-            }
         }
     }
 

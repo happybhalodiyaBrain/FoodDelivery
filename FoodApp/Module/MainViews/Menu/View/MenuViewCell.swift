@@ -4,7 +4,7 @@ import SwiftUI
 struct MenuViewCell: View {
     // MARK: - Properties
     let menuItem: MenuModel
-    
+    var action: () -> Void
     // MARK: - Body
     var body: some View {
         ZStack {
@@ -35,7 +35,7 @@ struct MenuViewCell: View {
                 }
                 Spacer()
                 // MARK: - Navigation Button
-                Button(action: {}) {
+                Button(action: action) {
                     Image(Icons.forward.rawValue)
                         .resizable()
                         .scaledToFit()
@@ -49,5 +49,5 @@ struct MenuViewCell: View {
 
 // MARK: - Preview
 #Preview {
-    MenuViewCell(menuItem: MenuModel(imageName: MenuLists.food.rawValue, title: "Food", items: "120"))
+    MenuViewCell(menuItem: MenuModel(imageName: MenuLists.food.rawValue, title: "Food", items: "120"), action: {})
 }

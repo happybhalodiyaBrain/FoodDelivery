@@ -19,14 +19,13 @@ struct MenuView: View {
                         showBackArrow: false,
                         greetingText: AppStrings.title.menuTitle,
                         onBackTapped: {
-                            print("Back tapped")
                         }
                     )
                 }
                 // MARK: - Search Bar
                 VStack {
                     SearchBar(searchQuery: $searchQuery, placeholder: AppStrings.searchFood)
-                        .padding(.top, 35)
+                        .padding(.top, 25)
                 }
                 // MARK: - Main Content
                 ScrollView {
@@ -45,7 +44,9 @@ struct MenuView: View {
                                 Button(action: {
                                     viewModel.onNavigateToMenuList(title: item.title)
                                 }, label: {
-                                    MenuViewCell(menuItem: item)
+                                    MenuViewCell(menuItem: item){
+                                        viewModel.onNavigateToMenuList(title: item.title)
+                                    }
                                 })
                                
                             }

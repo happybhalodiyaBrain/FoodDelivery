@@ -26,7 +26,7 @@ struct CustomHeaderView: View {
 
             // Greeting text
             Text(greetingText)
-                .textStyle(size: 20,color: Color(UIColor.appSecondaryFontColor), fontStyle: .interSemibold)
+                .textStyle(size: 20,color: Color(UIColor.appDarkGeryColor), fontStyle: .interSemibold)
 
             Spacer()
 

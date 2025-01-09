@@ -66,6 +66,14 @@
 		BD88C8952D27F7A300B008A1 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD88C88F2D27F7A300B008A1 /* Routes.swift */; };
 		BD88C8992D2962E600B008A1 /* ValidationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD88C8982D2962E600B008A1 /* ValidationUtils.swift */; };
 		BD88C89B2D29639200B008A1 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD88C89A2D29639100B008A1 /* AlertView.swift */; };
+		BDC1C9E42D2F8ABD00BD492B /* DropdownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC1C9E32D2F8ABD00BD492B /* DropdownMenu.swift */; };
+		BDC1C9E62D2F8D3200BD492B /* SectionWithHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC1C9E52D2F8D3200BD492B /* SectionWithHeader.swift */; };
+		BDC1C9E82D2F8D8100BD492B /* TopCategoriesSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC1C9E72D2F8D8100BD492B /* TopCategoriesSection.swift */; };
+		BDC1C9EA2D2F8E9800BD492B /* PopularRestaurantsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC1C9E92D2F8E9800BD492B /* PopularRestaurantsSection.swift */; };
+		BDC1C9EC2D2F930900BD492B /* MostPopularSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC1C9EB2D2F930900BD492B /* MostPopularSection.swift */; };
+		BDC1C9EE2D2F935900BD492B /* RecentItemsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC1C9ED2D2F935900BD492B /* RecentItemsSection.swift */; };
+		BDC1C9F12D2FA96C00BD492B /* RatingStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC1C9F02D2FA96C00BD492B /* RatingStarView.swift */; };
+		BDC1C9F32D2FAA3800BD492B /* ProductCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC1C9F22D2FAA3800BD492B /* ProductCategory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,6 +138,14 @@
 		BD88C8962D27FAD100B008A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BD88C8982D2962E600B008A1 /* ValidationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationUtils.swift; sourceTree = "<group>"; };
 		BD88C89A2D29639100B008A1 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		BDC1C9E32D2F8ABD00BD492B /* DropdownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownMenu.swift; sourceTree = "<group>"; };
+		BDC1C9E52D2F8D3200BD492B /* SectionWithHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionWithHeader.swift; sourceTree = "<group>"; };
+		BDC1C9E72D2F8D8100BD492B /* TopCategoriesSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCategoriesSection.swift; sourceTree = "<group>"; };
+		BDC1C9E92D2F8E9800BD492B /* PopularRestaurantsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularRestaurantsSection.swift; sourceTree = "<group>"; };
+		BDC1C9EB2D2F930900BD492B /* MostPopularSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostPopularSection.swift; sourceTree = "<group>"; };
+		BDC1C9ED2D2F935900BD492B /* RecentItemsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecentItemsSection.swift; path = "../New Group/RecentItemsSection.swift"; sourceTree = "<group>"; };
+		BDC1C9F02D2FA96C00BD492B /* RatingStarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingStarView.swift; sourceTree = "<group>"; };
+		BDC1C9F22D2FAA3800BD492B /* ProductCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCategory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,6 +302,7 @@
 		BD8848F12D2CF3EC00B6DFEA /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				BDC1C9EF2D2F944E00BD492B /* Section */,
 				BD0E88542D2E39D4008B44EA /* Model */,
 				BD0E88532D2E39CD008B44EA /* ViewModel */,
 				BD8848FA2D2CF46D00B6DFEA /* View */,
@@ -385,6 +402,9 @@
 				BD88C89A2D29639100B008A1 /* AlertView.swift */,
 				BD8849032D2D0D4100B6DFEA /* CustomHeaderView.swift */,
 				BD0E88592D2E3D54008B44EA /* SearchBar.swift */,
+				BDC1C9E32D2F8ABD00BD492B /* DropdownMenu.swift */,
+				BDC1C9F02D2FA96C00BD492B /* RatingStarView.swift */,
+				BDC1C9F22D2FAA3800BD492B /* ProductCategory.swift */,
 			);
 			path = CommonComponent;
 			sourceTree = "<group>";
@@ -698,6 +718,18 @@
 			path = Uitility;
 			sourceTree = "<group>";
 		};
+		BDC1C9EF2D2F944E00BD492B /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				BDC1C9E92D2F8E9800BD492B /* PopularRestaurantsSection.swift */,
+				BDC1C9E72D2F8D8100BD492B /* TopCategoriesSection.swift */,
+				BDC1C9EB2D2F930900BD492B /* MostPopularSection.swift */,
+				BDC1C9ED2D2F935900BD492B /* RecentItemsSection.swift */,
+				BDC1C9E52D2F8D3200BD492B /* SectionWithHeader.swift */,
+			);
+			path = Section;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -768,9 +800,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDC1C9EE2D2F935900BD492B /* RecentItemsSection.swift in Sources */,
 				BD88C87B2D27F78500B008A1 /* SignupView.swift in Sources */,
 				BD88C89B2D29639200B008A1 /* AlertView.swift in Sources */,
 				BD88C8942D27F7A300B008A1 /* NavigationService.swift in Sources */,
+				BDC1C9E82D2F8D8100BD492B /* TopCategoriesSection.swift in Sources */,
+				BDC1C9F32D2FAA3800BD492B /* ProductCategory.swift in Sources */,
 				BD8848EB2D2CE7DF00B6DFEA /* TabBarModel.swift in Sources */,
 				BD88C8912D27F7A300B008A1 /* AuthRoute.swift in Sources */,
 				BD88C8752D27F78500B008A1 /* NewPasswordView.swift in Sources */,
@@ -782,12 +817,14 @@
 				BD0E885E2D2E61D5008B44EA /* MenuViewCell.swift in Sources */,
 				BD88C8932D27F7A300B008A1 /* SplashRoute.swift in Sources */,
 				BD88C87F2D27F78500B008A1 /* OnBordingViewModel.swift in Sources */,
+				BDC1C9EA2D2F8E9800BD492B /* PopularRestaurantsSection.swift in Sources */,
 				BD0E885A2D2E3D54008B44EA /* SearchBar.swift in Sources */,
 				BD88C87E2D27F78500B008A1 /* OnBoardingView.swift in Sources */,
 				BD8848F92D2CF46800B6DFEA /* OffersView.swift in Sources */,
 				BD0E886A2D2E90CD008B44EA /* MenuListModel.swift in Sources */,
 				BD0E88662D2E9075008B44EA /* FoodItemView.swift in Sources */,
 				BD88C8792D27F78500B008A1 /* ResetPassView.swift in Sources */,
+				BDC1C9E62D2F8D3200BD492B /* SectionWithHeader.swift in Sources */,
 				BD88C8722D27F78500B008A1 /* LoginViewModel.swift in Sources */,
 				BD495F6C2D2C05C300257196 /* TabBarViewModel.swift in Sources */,
 				BD88C83A2D27F77500B008A1 /* AppFonts.swift in Sources */,
@@ -795,6 +832,7 @@
 				BD0E88682D2E90BE008B44EA /* MenuListViewModel.swift in Sources */,
 				BD8849042D2D0D4100B6DFEA /* CustomHeaderView.swift in Sources */,
 				BD88C8272D27F76800B008A1 /* ContentView.swift in Sources */,
+				BDC1C9F12D2FA96C00BD492B /* RatingStarView.swift in Sources */,
 				BD88C8322D27F76E00B008A1 /* DidntReceiveLinkView.swift in Sources */,
 				BD88C8742D27F78500B008A1 /* LoginMainViewModel.swift in Sources */,
 				BD495F6E2D2C05D100257196 /* TabBarView.swift in Sources */,
@@ -819,10 +857,12 @@
 				BD8848FF2D2CF49300B6DFEA /* ProfileView.swift in Sources */,
 				BD88C8732D27F78500B008A1 /* LoginMainView.swift in Sources */,
 				BD3361442D2B92E0008B1299 /* TextStyles.swift in Sources */,
+				BDC1C9EC2D2F930900BD492B /* MostPopularSection.swift in Sources */,
 				BD88C8822D27F78500B008A1 /* SplashViewModel.swift in Sources */,
 				BD88C8992D2962E600B008A1 /* ValidationUtils.swift in Sources */,
 				BD88C8712D27F78500B008A1 /* LoginView.swift in Sources */,
 				BD88C83D2D27F77500B008A1 /* ImageResources.swift in Sources */,
+				BDC1C9E42D2F8ABD00BD492B /* DropdownMenu.swift in Sources */,
 				BD0E88562D2E39E2008B44EA /* HomeViewModel.swift in Sources */,
 				BD88C8782D27F78500B008A1 /* OTPViewModel.swift in Sources */,
 			);
