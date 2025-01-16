@@ -17,7 +17,7 @@ struct MenuList: View {
     /// The search query entered by the user.
     @State private var searchQuery = ""
     /// The view model responsible for providing the food items.
-    @StateObject private var viewModel = FoodViewModel()
+    @StateObject private var viewModel = MenuListViewModel()
     
     
     var body: some View {
@@ -49,8 +49,13 @@ struct MenuList: View {
                     // For each food item in the view model, create a FoodItemView
                     
                     ForEach(viewModel.foodItems) { item in
-                        FoodItemView(foodItem: item)
-                    }
+                        Button(action: {
+                            viewModel.onNavigateToMenuDetails()
+                        }, label: {
+                            FoodItemView(foodItem: item)
+                        })
+                      
+                    }.buttonStyle(PlainButtonStyle())
                     .padding(.bottom, 4)
                 }
                 

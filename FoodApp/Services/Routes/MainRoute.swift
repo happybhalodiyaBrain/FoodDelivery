@@ -37,7 +37,7 @@ struct MenuRouteBuilder {
         case .menuList(let title):
             MenuList(title: title)
         case .menuDetail:
-            Text("hi")
+            MenuDetails()
         }
     }
 }

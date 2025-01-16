@@ -10,7 +10,10 @@ import SwiftUI
 struct DropdownMenu: View {
     let options: [String]
     @Binding var selectedOption: String
-    
+    let spacer : Bool 
+    let textColor: Color
+    let iconColor : Color
+   
     var body: some View {
         Menu {
             ForEach(options, id: \.self) { option in
@@ -23,9 +26,11 @@ struct DropdownMenu: View {
         } label: {
             HStack {
                 Text(selectedOption)
-                    .textStyle(size: 16, color: Color(UIColor.appSecondaryFontColor), fontStyle: .interSemibold)
-                
+                    .textStyle(size: 16, color: textColor, fontStyle: .interSemibold)
+                spacer ?  Spacer() : nil
                 Image(Icons.dropDown.rawValue)
+                    .renderingMode(.template)
+                    .foregroundColor(iconColor)
                     .padding(.leading, 10)
             }
         }

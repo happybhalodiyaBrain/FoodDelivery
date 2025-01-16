@@ -11,6 +11,7 @@ enum AppImages: String {
     case onBording3 = "onBording3"
     case Organetopshape = "Organetopshape"
     case dot = "dot"
+    case logo = "logo"
 }
 
 enum TabIcon : String {
@@ -28,6 +29,11 @@ enum Icons: String {
     case search = "search"
     case star = "star"
     case forward = "forward"
+    case whiteCart = "whiteCart"
+    case whiteBack = "whiteBack"
+    case borderStar = "borderStar"
+    case heart = "heart"
+    case edit = "edit"
 }
 
 enum MenuItem: String {
@@ -59,4 +65,22 @@ enum MenuLists : String {
     case menuList2 = "menuList2"
     case menuList3 = "menuList3"
     case menuList4 = "menuList4"
+}
+
+enum MenuDetailImages : String {
+    case menudetail = "menudetail"
+    case menuRectangle = "menuRectangle"
+    case menuWhiteRectangle = "menuWhiteRectangle"
+    case menuCart = "menuCart"
+    
+}
+
+enum offersImages : String {
+    case offers1 = "offers1"
+    case offers2 = "offers2"
+    case offers3 = "offers3"
+}
+
+enum profile : String {
+    case dummyProfile = "dummyProfile"
 }

@@ -2,7 +2,7 @@ import Foundation
 
 // MARK: - FoodItem Model
 /// A data model representing a food item with its details.
-struct FoodItem: Identifiable {
+struct MenuListModel: Identifiable {
     // MARK: - Properties
     /// A unique identifier for the food item.
     let id = UUID()

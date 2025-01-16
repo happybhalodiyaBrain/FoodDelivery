@@ -37,7 +37,7 @@ struct LoginView: View {
                 // MARK: - Forgot Password Button
                 Text(AppStrings.forgotPassword)
                     .textStyle(size: 14, color: Color(UIColor.appSecondaryFontColor), fontStyle: .interRegular)
-                    .appTopPadding(25)
+                    .appTopPadding(27)
                     .onTapGesture {
                         viewModel.onNavigateToResetPasswordView()
                     }
@@ -73,7 +73,7 @@ struct LoginView: View {
                 // MARK: - Sign Up Link
                 DidntReceiveLinkView(
                     message: AppStrings.signupLink,
-                    linkText: AppStrings.clickHere,
+                    linkText: AppStrings.signUp,
                     action: { viewModel.onNavigateToSignupPage() }
                 )
             }

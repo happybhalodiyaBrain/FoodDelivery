@@ -10,7 +10,7 @@ struct OnBoardingView: View {
                 TabView(selection: $viewModel.currentStepIndex) {
                     ForEach(viewModel.steps.indices, id: \.self) { index in
                         let step = viewModel.steps[index]
-                        VStack(spacing: 30) { // Adjust spacing based on screen height
+                        VStack{
                             // MARK: - Onboarding Image
                             Image(step.image)
                                 .resizable()
@@ -22,7 +22,7 @@ struct OnBoardingView: View {
                                 ForEach(viewModel.steps.indices, id: \.self) { dotIndex in
                                     Circle()
                                         .fill(dotIndex == viewModel.currentStepIndex ? Color(UIColor.appOrangeColor) : Color(UIColor.appLightGrayColor))
-                                        .frame(width: 10, height: 10)
+                                        .frame(width: 8, height: 8)
                                 }
                             }
                             .appTopPadding(30) // Adjust top padding based on screen size
@@ -37,22 +37,21 @@ struct OnBoardingView: View {
                                 .textStyle(size:13, color: Color(UIColor.appSecondaryFontColor), fontStyle: .interRegular)
                                 .appHorizontalPadding(52) // Adjust horizontal padding for description
                                 .appTopPadding(33) // Adjust padding for description
-                            
-                            // MARK: - Next Button
-                            CustomNavigationButton(
-                                title: AppStrings.next,
-                                backgroundColor: Color(UIColor.appOrangeColor),
-                                foregroundColor: Color(UIColor.appWhiteColor),
-                                action: {
-                                    viewModel.onNavigationToLoginMainView()
-                                }
-                            )
-                            .appTopPadding(41) // Adjust padding for button
                         }
                         .tag(index)
                     }
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                .frame(height: geometry.size.height * 0.65)
+                // MARK: - Next Button
+                CustomNavigationButton(
+                    title: AppStrings.next,
+                    backgroundColor: Color(UIColor.appOrangeColor),
+                    foregroundColor: Color(UIColor.appWhiteColor),
+                    action: {
+                        viewModel.onNavigationToLoginMainView()
+                    }
+                )
             }
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden()

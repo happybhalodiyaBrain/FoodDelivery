@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct FoodItemView: View {
-    let foodItem: FoodItem
+    let foodItem: MenuListModel
     
     var body: some View {
         ZStack(alignment: .bottomLeading) {
@@ -49,5 +49,5 @@ struct FoodItemView: View {
 }
 
 #Preview {
-    FoodItemView(foodItem: FoodItem( title: "French Apple Pie", imageName: MenuLists.menuList1.rawValue, rating: "4.1", primaryCategory: "9 Minute", secondaryCategory: "Desserts"))
+    FoodItemView(foodItem: MenuListModel( title: "French Apple Pie", imageName: MenuLists.menuList1.rawValue, rating: "4.1", primaryCategory: "9 Minute", secondaryCategory: "Desserts"))
 }

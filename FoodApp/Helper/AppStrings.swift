@@ -15,13 +15,17 @@ struct AppStrings {
     }
     
     struct ErrorMessages {
-        static let emailError = "Enter a valid email address"
+        static let emptyEmailError = "Email cannot be empty."
+        static let emailError = "Please enter valid email address"
+        static let emptyPasswordError = "Password cannot be empty."
         static let passwordError = "Password should be at least 6 characters"
-        static let nameError = "Name cannot be empty"
-        static let mobileError = "Please enter a valid mobile number"
+        static let nameError = "Name cannot be empty."
+        static let mobileError = "Mobile cannot be empty."
         static let addressError = "Address cannot be empty"
         static let confirmPasswordError = "Confirm password does not match with password"
         static let validationError = "Validation Error"
+        static let pincodeError = "Pincode cannot be empty"
+        static let cityError = "City cannot be empty"
     }
     
     static let login = "Login"
@@ -36,6 +40,8 @@ struct AppStrings {
     static let name = "Name"
     static let mobile = "Mobile No"
     static let address = "Address"
+    static let city = "City"
+    static let pincode = "Pincode"
     static let confirmPassword = "Confirm Password"
     static let loginLink = "Already have an Account?"
     static let loginwithFacebook = "Login with Facebook"
@@ -62,10 +68,17 @@ struct AppStrings {
     static let mostPopular = "Most Popular"
     static let recentItems = "Recent Items"
     static let viewAll = "View all"
+    static let save = "Save"
+    static let offersNote = "Find discounts, Offers special meals and more!"
     
+    struct buttons  {
+        static let checkOffers = "Check Offers"
+    }
     struct title {
         static let homeTitle = "Good morning Akila!"
         static let menuTitle = "Menu"
+        static let offersTitle = "Latest Offers"
+        static let profileTitle = "Profile"
     }
     
     static let food = "Food"
@@ -90,5 +103,21 @@ struct AppStrings {
         static let home  = "Home"
         static let work  = "Work"
         static let other  = "Other"
+    }
+    
+    struct menuDetails {
+        static let menuTitle = "Tandoori Chicken Pizza"
+        static let starRatings = "4 Star Ratings"
+        static let menuRs = "Rs. 750"
+        static let perPortion = "/ per Portion"
+        static let description = "Description"
+        static let dummyDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare leo non mollis id cursus. Eu euismod faucibus in leo malesuada"
+        static let customizeYourOrder = "Customize your Order"
+        static let sizeOfPortion = "Select the size of portion"
+        static let ingredients = "Select the ingredients"
+        static let numberofPortions = "Number of Portions"
+        static let totalPrice = "Total Price"
+        static let lKR1500 = "LKR 1500"
+        static let addToCart = "Add To Cart"
     }
 }

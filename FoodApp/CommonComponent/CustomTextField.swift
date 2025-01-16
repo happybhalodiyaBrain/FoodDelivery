@@ -27,25 +27,32 @@ struct CustomTextField: View {
         Group {
             if isSecure {
                 SecureField(placeholder, text: $text)
+                    .multilineTextAlignment(.leading)
                     .frame(height: 56)
                     .padding([.leading, .trailing],34)
+                    .textStyle(size: 14, color: Color(UIColor.appSecondaryFontColor),
+                               fontStyle: .interRegular)
                     .background(Color(UIColor.appLightGrayColor))
                     .keyboardType(keyboardType)
                     .cornerRadius(28)
                     .padding([.leading, .trailing],34)
             } else {
                 TextField(placeholder, text: $text)
+                    .multilineTextAlignment(.leading)
                     .frame(height: 56)
                     .padding([.leading, .trailing],34)
+                    .textStyle(size: 14, color: Color(UIColor.appSecondaryFontColor),
+                               fontStyle: .interRegular)
                     .background(Color(UIColor.appLightGrayColor))
                     .keyboardType(keyboardType)
                     .cornerRadius(28)
+                    .multilineTextAlignment(.leading)
                     .onChange(of: text) { newValue in
-                                           // If the text is a mobile number, ensure it is only 10 characters long
-                                           if placeholder == AppStrings.mobile && newValue.count > 10 {
-                                               text = String(newValue.prefix(10)) // Trim to 10 characters
-                                           }
-                                       }
+                        // If the text is a mobile number, ensure it is only 10 characters long
+                        if placeholder == AppStrings.mobile && newValue.count > 10 {
+                            text = String(newValue.prefix(10)) // Trim to 10 characters
+                        }
+                    }
                     .padding([.leading, .trailing],34)
             }
         }

@@ -39,7 +39,10 @@ struct HomeView: View {
                 // Dropdown menu to select a location
                 DropdownMenu(
                     options: viewModel.locations,
-                    selectedOption: $selectedLocation
+                    selectedOption: $selectedLocation,
+                    spacer: false,
+                    textColor : Color(UIColor.appSecondaryFontColor),
+                    iconColor:Color(UIColor.appOrangeColor)
                 )
             }
             .frame(maxWidth: .infinity, alignment: .leading)

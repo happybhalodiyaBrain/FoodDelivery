@@ -15,7 +15,10 @@ class LoginViewModel: ObservableObject {
     /// Validates the login credentials and triggers the completion handler if valid.
     /// - Parameter completion: A closure that is called when the credentials are valid.
     func validateLogin(completion: @escaping () -> Void) {
-        if !ValidationUtils.isValidEmail(email) {
+        if ValidationUtils.isEmpty(email){
+            alertMessage = AppStrings.ErrorMessages.emptyEmailError
+            showAlert = true
+        } else if !ValidationUtils.isValidEmail(email) {
             alertMessage = AppStrings.ErrorMessages.emailError
             showAlert = true
         } else if !ValidationUtils.isValidPassword(password) {

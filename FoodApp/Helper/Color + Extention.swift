@@ -12,5 +12,6 @@ extension UIColor {
     static let appBlackColor = "appBlack"
     static let appWhiteColor = "appWhite"
     static let appPlaceholderColor = "appPlaceholder"
+    static let appGrayColor = "appGray"
    
 }

@@ -40,7 +40,7 @@ struct SignupView: View {
                 // MARK: - Login Link
                 DidntReceiveLinkView(
                     message: AppStrings.loginLink,
-                    linkText: AppStrings.clickHere,
+                    linkText: AppStrings.login,
                     action: { viewModel.onNavigateToLogin() }
                 ).appTopPadding(25)
             }

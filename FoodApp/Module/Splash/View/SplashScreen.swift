@@ -14,19 +14,11 @@ struct SplashScreen: View {
             
             // Center content
             VStack(spacing: 10) {
-                Image(AppImages.monkeyFace.rawValue)
+                Image(AppImages.logo.rawValue)
                     .resizable()
-                    .frame(width: 103, height: 105)
+                    .frame(width: 209, height: 195)
                 
-                HStack {
-                    Text(AppStrings.meal)
-                        .textStyle(size: 34, color: Color(UIColor.appOrangeColor), fontStyle: .interBold)
-                    Text(AppStrings.monkey)
-                        .textStyle(size: 34, color: Color(UIColor.appDarkGeryColor), fontStyle: .interBold)
-                }
-                Text(AppStrings.foodDelivery)
-                    .textStyle(size: 10, color: Color(UIColor.appSecondaryFontColor), fontStyle: .interRegular)
-                    .tracking(2)
+               
             }
         }
     }
