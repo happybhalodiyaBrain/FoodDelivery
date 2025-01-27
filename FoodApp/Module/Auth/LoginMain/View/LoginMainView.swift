@@ -1,4 +1,5 @@
 import SwiftUI
+import Foundation
 
 struct LoginMainView: View {
     // MARK: - ViewModel
@@ -13,42 +14,33 @@ struct LoginMainView: View {
                         .resizable()
                         .scaledToFill()
                 }.frame(width: geometry.size.width,
-                        height: geometry.size.height * 0.50)
+                        height: geometry.size.height / 2)
                 
                 
                 // MARK: - Main Content
-                VStack {
+           
                     // Logo Image
-                    Image(AppImages.monkeyFace.rawValue)
+                    Image(AppImages.logo.rawValue)
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 100, height: 100)
-                        .padding(.top, geometry.size.height * -0.11) // Adjust top padding for different screen sizes
-                    
-                    // MARK: - Title
-                    HStack {
-                        Text(AppStrings.meal)
-                            .textStyle(size:34, color: Color(UIColor.appOrangeColor), fontStyle: .interBold)
-                        
-                        Text(AppStrings.monkey)
-                            .textStyle(size: 34, color: Color(UIColor.appDarkGeryColor), fontStyle: .interBold)
-                    }
+                        .frame(width: geometry.size.width * 0.6, height: geometry.size.height * 0.3)
+                        .padding(.top, -(geometry.size.height * 0.13))
                     
                     
-                    // MARK: - Subtitle
-                    Text(AppStrings.foodDelivery)
-                        .textStyle(size: 10, color: Color(UIColor.appSecondaryFontColor), fontStyle: .interRegular)
-                        .tracking(2)
-                        .appTopPadding(5)
                     
                     // MARK: - Login Note
+                    
                     Text(AppStrings.loginNote)
-                        .textStyle(size:13, color: Color(UIColor.appSecondaryFontColor), fontStyle: .interRegular)
-                        .appHorizontalPadding(geometry.size.width * 0.10)
-                        .appTopPadding(geometry.size.height * 0.02)
+                        .textStyle(size: FontSizeManager.scaledFont(size: 13), color: Color(UIColor.appSecondaryFontColor), fontStyle: .interRegular)
+                        .padding(.horizontal, geometry.size.width * 0.1)
+                        .multilineTextAlignment(.center)
+                        .lineSpacing(2)
+                        .padding(.top, geometry.size.height * 0.02)
+                    
+                    
                     
                     // MARK: - Action Buttons
-                    VStack(spacing: geometry.size.height * 0.03) { // Adjust spacing between buttons
+                    VStack(spacing: geometry.size.height * 0.025) { // Adjust spacing between buttons
                         // Login Button
                         CustomNavigationButton(
                             title: AppStrings.login,
@@ -65,10 +57,8 @@ struct LoginMainView: View {
                             action: { viewModel.onNavigateToSignupView() }
                         )
                     }
-                    .padding(.top, geometry.size.height * 0.05)
-                    
-                }
-                Spacer()
+                    .padding(.top, geometry.size.height * 0.04)
+
             }
             .ignoresSafeArea()
             .navigationBarBackButtonHidden()

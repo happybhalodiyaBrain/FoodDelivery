@@ -1,3 +1,4 @@
+import Foundation
 import SwiftUI
 
 struct ContentView: View {
@@ -31,9 +32,10 @@ struct ContentView: View {
                         }
                     }
                     .environmentObject(navigationService)
+                    
                 }
             }
-        }
+    }
     }
 
 

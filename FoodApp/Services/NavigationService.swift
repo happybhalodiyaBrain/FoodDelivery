@@ -10,11 +10,11 @@ final class NavigationService: ObservableObject {
     
     // MARK: - Wrapper variable(s)
     @Published var navigationPath: Array<Routes> = Array<Routes>()
-    @Published var isLoggedIn: Bool = UserDefaults.standard.bool(forKey: "isLoggedIn")
+    @Published var isLoggedIn: Bool = UserDefaults.standard.bool(forKey: AppStrings.loginKey)
     
     func updateLoginStatus(_ isLoggedIn: Bool) {
         guard self.isLoggedIn != isLoggedIn else { return }
-        UserDefaults.standard.set(isLoggedIn, forKey: "isLoggedIn")
+        UserDefaults.standard.set(isLoggedIn, forKey: AppStrings.loginKey)
         self.isLoggedIn = isLoggedIn
         popToRoot()
     }

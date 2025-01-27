@@ -2,9 +2,9 @@ import SwiftUI
 
 class OnboardingViewModel: ObservableObject {
     @EnvironmentObject private var navigationService: NavigationService
-
+    @Published var currentIndex: Int = 0
     // MARK: - Published Properties
-    @Published var steps: [OnboardingStep] = [
+     let steps: [OnboardingStep] = [
         OnboardingStep(image: AppImages.onBording1.rawValue,
                        title: AppStrings.OnBording.onbordingTitle1,
                        description: AppStrings.OnBording.onbordingSubTitle1),
@@ -17,21 +17,19 @@ class OnboardingViewModel: ObservableObject {
                        title:AppStrings.OnBording.onbordingTitle3,
                        description: AppStrings.OnBording.onbordingSubTitle3)
     ]
-    /// The current index of the displayed onboarding step.
-    @Published var currentStepIndex: Int = 0
     
-    // MARK: - Methods
+    var currentStep: OnboardingStep {
+           return steps[currentIndex]
+       }
+    // Function to navigate to the login screen when the last step is reached
+       func onNextButtonTapped() {
+           if currentIndex == steps.count - 1 {
+               onNavigationToLoginMainView()
+           } else {
+               currentIndex += 1
+           }
+       }
     
-    /// Advances to the next step in the onboarding flow if there are more steps
-    func nextStep() {
-        if currentStepIndex < steps.count - 1 {
-            currentStepIndex += 1
-        }
-    }
-    /// Checks if the current step is the last step in the onboarding flow.
-    func isLastStep() -> Bool {
-        return currentStepIndex == steps.count - 1
-    }
     /// Navigates to the login main view after the onboarding process is completed.
     func onNavigationToLoginMainView () {
         NavigationService.shared.push(to: .auth(.loginMain))

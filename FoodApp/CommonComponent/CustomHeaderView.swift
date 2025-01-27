@@ -42,5 +42,6 @@ struct CustomHeaderView: View {
         .padding(.horizontal)
         .padding(.vertical, 10)
         .background(Color.white) // Customize your background color
+        
     }
 }

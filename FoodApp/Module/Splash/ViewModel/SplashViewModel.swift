@@ -6,6 +6,7 @@ class SplashViewModel: ObservableObject {
     @Published var showSplash: Bool = true
     
     init() {
+   
         startSplashSequence()
     }
     private func startSplashSequence() {

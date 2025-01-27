@@ -34,6 +34,7 @@ enum Icons: String {
     case borderStar = "borderStar"
     case heart = "heart"
     case edit = "edit"
+    case camerafill = "camera.fill"
 }
 
 enum MenuItem: String {

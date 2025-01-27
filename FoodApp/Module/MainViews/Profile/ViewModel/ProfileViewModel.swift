@@ -1,12 +1,6 @@
-//
-//  ProfileViewModel.swift
-//  FoodApp
-//
-//  Created by Happy  Bhalodiya on 15/01/25.
-//
-
 import Foundation
 
+// MARK: - ProfileViewModel Class
 class ProfileViewModel: ObservableObject {
     
     // MARK: - Published Properties for User Input
@@ -45,22 +39,30 @@ class ProfileViewModel: ObservableObject {
         }
     }
     
+    // MARK: - Show Alert
+    /// Displays an alert with the provided title, message, and alert type.
+    /// - Parameters:
+    ///   - title: The title to be displayed in the alert.
+    ///   - message: The message to be displayed in the alert.
+    ///   - alertType: The type of alert, which can be used to customize the behavior (default is `.emptyError`).
     private func showAlert(title: String, message: String, alertType: AlertType = .emptyError) {
         alertTitle = title
         alertMessage = message
         showAlert = true
         self.isSignOutAlert = alertType == .signOut
     }
+    // MARK: - Sign Out Alert
     /// Triggers the sign-out confirmation alert.
     func showSignOutAlert() {
         isSignOutAlert = true
-        showAlert(title: "Sign Out", message: "Are you sure you want to sign out?", alertType: .signOut)
+        showAlert(title: AppStrings.signOut, message: AppStrings.signoutMessage, alertType: .signOut)
     }
     
     
-    // MARK: - Sign Out
+    // MARK: - Sign Out Logic
+    /// Signs the user out by clearing the stored login state and navigating to the login screen.
     func signOut() {
-        UserDefaults.standard.removeObject(forKey: "isLoggedIn")
+        UserDefaults.standard.removeObject(forKey: AppStrings.loginKey)
         NavigationService.shared.popToRoot(push: .auth(.login))
     }
     

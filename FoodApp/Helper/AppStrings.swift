@@ -27,7 +27,7 @@ struct AppStrings {
         static let pincodeError = "Pincode cannot be empty"
         static let cityError = "City cannot be empty"
     }
-    
+    static let loginKey = "isLoggedIn"
     static let login = "Login"
     static let loginDetails = "Add your details to login"
     static let email = "Your Email"
@@ -70,6 +70,10 @@ struct AppStrings {
     static let viewAll = "View all"
     static let save = "Save"
     static let offersNote = "Find discounts, Offers special meals and more!"
+    static let editProfile = "Edit Profile"
+    static let hithereEmilia = "Hi there Emilia!"
+    static let signOut = "Sign Out"
+    static let signoutMessage = "Are you sure you want to sign out?"
     
     struct buttons  {
         static let checkOffers = "Check Offers"

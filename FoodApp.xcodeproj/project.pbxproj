@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD0048502D390385008F817D /* Responsive.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD00484F2D390385008F817D /* Responsive.swift */; };
 		BD0E88562D2E39E2008B44EA /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0E88552D2E39E2008B44EA /* HomeViewModel.swift */; };
 		BD0E88582D2E39F3008B44EA /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0E88572D2E39F3008B44EA /* HomeModel.swift */; };
 		BD0E885A2D2E3D54008B44EA /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0E88592D2E3D54008B44EA /* SearchBar.swift */; };
@@ -85,6 +86,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BD00484F2D390385008F817D /* Responsive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Responsive.swift; sourceTree = "<group>"; };
 		BD06326D2D22C1EC00571AE1 /* FoodApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD0E88552D2E39E2008B44EA /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		BD0E88572D2E39F3008B44EA /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
@@ -427,6 +429,7 @@
 				BDC1C9E32D2F8ABD00BD492B /* DropdownMenu.swift */,
 				BDC1C9F02D2FA96C00BD492B /* RatingStarView.swift */,
 				BDC1C9F22D2FAA3800BD492B /* ProductCategory.swift */,
+				BD00484F2D390385008F817D /* Responsive.swift */,
 			);
 			path = CommonComponent;
 			sourceTree = "<group>";
@@ -959,6 +962,7 @@
 				BD88C8712D27F78500B008A1 /* LoginView.swift in Sources */,
 				BD88C83D2D27F77500B008A1 /* ImageResources.swift in Sources */,
 				BDC1C9E42D2F8ABD00BD492B /* DropdownMenu.swift in Sources */,
+				BD0048502D390385008F817D /* Responsive.swift in Sources */,
 				BD0E88562D2E39E2008B44EA /* HomeViewModel.swift in Sources */,
 				BD88C8782D27F78500B008A1 /* OTPViewModel.swift in Sources */,
 			);
